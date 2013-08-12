@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086C784717B98FE200CE9FA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086C784617B98FE200CE9FA7 /* XCTest.framework */; };
+		086C784817B98FE200CE9FA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
+		086C784917B98FE200CE9FA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
+		086C784F17B98FE200CE9FA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 086C784D17B98FE200CE9FA7 /* InfoPlist.strings */; };
+		086C785117B98FE200CE9FA7 /* Growing_Pains_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 086C785017B98FE200CE9FA7 /* Growing_Pains_Tests.m */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */; };
@@ -23,11 +28,6 @@
 		08A7DC1017B977E500C3ED80 /* GPSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC0F17B977E500C3ED80 /* GPSecondViewController.m */; };
 		08A7DC1217B977E500C3ED80 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC1117B977E500C3ED80 /* second.png */; };
 		08A7DC1417B977E500C3ED80 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC1317B977E500C3ED80 /* second@2x.png */; };
-		08A7DC1C17B977E500C3ED80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC1B17B977E500C3ED80 /* SenTestingKit.framework */; };
-		08A7DC1D17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
-		08A7DC1E17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
-		08A7DC2617B977E500C3ED80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC2417B977E500C3ED80 /* InfoPlist.strings */; };
-		08A7DC2917B977E500C3ED80 /* GrowingPains2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC2817B977E500C3ED80 /* GrowingPains2Tests.m */; };
 		08A7DC3717B97B0600C3ED80 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3617B97B0600C3ED80 /* Parse.framework */; };
 		08A7DC3917B97B2000C3ED80 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3817B97B2000C3ED80 /* AudioToolbox.framework */; };
 		08A7DC3B17B97B2800C3ED80 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3A17B97B2800C3ED80 /* CFNetwork.framework */; };
@@ -43,16 +43,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		08A7DC1F17B977E500C3ED80 /* PBXContainerItemProxy */ = {
+		086C785317B98FE200CE9FA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08A7DBE117B977E500C3ED80 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 08A7DBE817B977E500C3ED80;
-			remoteInfo = GrowingPains2;
+			remoteInfo = "Growing Pains";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		086C784517B98FE200CE9FA7 /* Growing Pains Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Growing Pains Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		086C784617B98FE200CE9FA7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		086C784C17B98FE200CE9FA7 /* Growing Pains Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Growing Pains Tests-Info.plist"; sourceTree = "<group>"; };
+		086C784E17B98FE200CE9FA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		086C785017B98FE200CE9FA7 /* Growing_Pains_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Growing_Pains_Tests.m; sourceTree = "<group>"; };
+		086C785217B98FE200CE9FA7 /* Growing Pains Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Growing Pains Tests-Prefix.pch"; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,12 +81,7 @@
 		08A7DC0F17B977E500C3ED80 /* GPSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSecondViewController.m; sourceTree = "<group>"; };
 		08A7DC1117B977E500C3ED80 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		08A7DC1317B977E500C3ED80 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		08A7DC1A17B977E500C3ED80 /* GrowingPains2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowingPains2Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DC1B17B977E500C3ED80 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		08A7DC2317B977E500C3ED80 /* GrowingPains2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrowingPains2Tests-Info.plist"; sourceTree = "<group>"; };
-		08A7DC2517B977E500C3ED80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		08A7DC2717B977E500C3ED80 /* GrowingPains2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrowingPains2Tests.h; sourceTree = "<group>"; };
-		08A7DC2817B977E500C3ED80 /* GrowingPains2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingPains2Tests.m; sourceTree = "<group>"; };
 		08A7DC3617B97B0600C3ED80 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		08A7DC3817B97B2000C3ED80 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		08A7DC3A17B97B2800C3ED80 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -98,6 +99,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		086C784217B98FE200CE9FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				086C784717B98FE200CE9FA7 /* XCTest.framework in Frameworks */,
+				086C784917B98FE200CE9FA7 /* UIKit.framework in Frameworks */,
+				086C784817B98FE200CE9FA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08A7DBE617B977E500C3ED80 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,24 +129,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08A7DC1617B977E500C3ED80 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08A7DC1C17B977E500C3ED80 /* SenTestingKit.framework in Frameworks */,
-				08A7DC1D17B977E500C3ED80 /* UIKit.framework in Frameworks */,
-				08A7DC1E17B977E500C3ED80 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		086C784A17B98FE200CE9FA7 /* Growing Pains Tests */ = {
+			isa = PBXGroup;
+			children = (
+				086C785017B98FE200CE9FA7 /* Growing_Pains_Tests.m */,
+				086C784B17B98FE200CE9FA7 /* Supporting Files */,
+			);
+			path = "Growing Pains Tests";
+			sourceTree = "<group>";
+		};
+		086C784B17B98FE200CE9FA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				086C784C17B98FE200CE9FA7 /* Growing Pains Tests-Info.plist */,
+				086C784D17B98FE200CE9FA7 /* InfoPlist.strings */,
+				086C785217B98FE200CE9FA7 /* Growing Pains Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		08A7DBE017B977E500C3ED80 = {
 			isa = PBXGroup;
 			children = (
 				08A7DBF217B977E500C3ED80 /* GrowingPains2 */,
-				08A7DC2117B977E500C3ED80 /* GrowingPains2Tests */,
+				086C784A17B98FE200CE9FA7 /* Growing Pains Tests */,
 				08A7DBEB17B977E500C3ED80 /* Frameworks */,
 				08A7DBEA17B977E500C3ED80 /* Products */,
 			);
@@ -145,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				08A7DBE917B977E500C3ED80 /* Growing Pains.app */,
-				08A7DC1A17B977E500C3ED80 /* GrowingPains2Tests.octest */,
+				086C784517B98FE200CE9FA7 /* Growing Pains Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +187,7 @@
 				08A7DBEE17B977E500C3ED80 /* Foundation.framework */,
 				08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */,
 				08A7DC1B17B977E500C3ED80 /* SenTestingKit.framework */,
+				086C784617B98FE200CE9FA7 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,25 +217,6 @@
 				08A7DBFE17B977E500C3ED80 /* Default.png */,
 				08A7DC0017B977E500C3ED80 /* Default@2x.png */,
 				08A7DC0217B977E500C3ED80 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		08A7DC2117B977E500C3ED80 /* GrowingPains2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				08A7DC2717B977E500C3ED80 /* GrowingPains2Tests.h */,
-				08A7DC2817B977E500C3ED80 /* GrowingPains2Tests.m */,
-				08A7DC2217B977E500C3ED80 /* Supporting Files */,
-			);
-			path = GrowingPains2Tests;
-			sourceTree = "<group>";
-		};
-		08A7DC2217B977E500C3ED80 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				08A7DC2317B977E500C3ED80 /* GrowingPains2Tests-Info.plist */,
-				08A7DC2417B977E500C3ED80 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -262,6 +264,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		086C784417B98FE200CE9FA7 /* Growing Pains Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 086C785517B98FE200CE9FA7 /* Build configuration list for PBXNativeTarget "Growing Pains Tests" */;
+			buildPhases = (
+				086C784117B98FE200CE9FA7 /* Sources */,
+				086C784217B98FE200CE9FA7 /* Frameworks */,
+				086C784317B98FE200CE9FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				086C785417B98FE200CE9FA7 /* PBXTargetDependency */,
+			);
+			name = "Growing Pains Tests";
+			productName = "Growing Pains Tests";
+			productReference = 086C784517B98FE200CE9FA7 /* Growing Pains Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		08A7DBE817B977E500C3ED80 /* Growing Pains */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08A7DC2C17B977E500C3ED80 /* Build configuration list for PBXNativeTarget "Growing Pains" */;
@@ -279,25 +299,6 @@
 			productReference = 08A7DBE917B977E500C3ED80 /* Growing Pains.app */;
 			productType = "com.apple.product-type.application";
 		};
-		08A7DC1917B977E500C3ED80 /* GrowingPains2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 08A7DC2F17B977E500C3ED80 /* Build configuration list for PBXNativeTarget "GrowingPains2Tests" */;
-			buildPhases = (
-				08A7DC1517B977E500C3ED80 /* Sources */,
-				08A7DC1617B977E500C3ED80 /* Frameworks */,
-				08A7DC1717B977E500C3ED80 /* Resources */,
-				08A7DC1817B977E500C3ED80 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				08A7DC2017B977E500C3ED80 /* PBXTargetDependency */,
-			);
-			name = GrowingPains2Tests;
-			productName = GrowingPains2Tests;
-			productReference = 08A7DC1A17B977E500C3ED80 /* GrowingPains2Tests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -307,6 +308,11 @@
 				CLASSPREFIX = GP;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Paperplate LLC";
+				TargetAttributes = {
+					086C784417B98FE200CE9FA7 = {
+						TestTargetID = 08A7DBE817B977E500C3ED80;
+					};
+				};
 			};
 			buildConfigurationList = 08A7DBE417B977E500C3ED80 /* Build configuration list for PBXProject "GrowingPains2" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -321,12 +327,20 @@
 			projectRoot = "";
 			targets = (
 				08A7DBE817B977E500C3ED80 /* Growing Pains */,
-				08A7DC1917B977E500C3ED80 /* GrowingPains2Tests */,
+				086C784417B98FE200CE9FA7 /* Growing Pains Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		086C784317B98FE200CE9FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				086C784F17B98FE200CE9FA7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08A7DBE717B977E500C3ED80 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,33 +357,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08A7DC1717B977E500C3ED80 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08A7DC2617B977E500C3ED80 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		08A7DC1817B977E500C3ED80 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		086C784117B98FE200CE9FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				086C785117B98FE200CE9FA7 /* Growing_Pains_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		08A7DBE517B977E500C3ED80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,25 +381,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08A7DC1517B977E500C3ED80 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08A7DC2917B977E500C3ED80 /* GrowingPains2Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		08A7DC2017B977E500C3ED80 /* PBXTargetDependency */ = {
+		086C785417B98FE200CE9FA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 08A7DBE817B977E500C3ED80 /* Growing Pains */;
-			targetProxy = 08A7DC1F17B977E500C3ED80 /* PBXContainerItemProxy */;
+			targetProxy = 086C785317B98FE200CE9FA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		086C784D17B98FE200CE9FA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				086C784E17B98FE200CE9FA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		08A7DBF517B977E500C3ED80 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,17 +416,66 @@
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
-		08A7DC2417B977E500C3ED80 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08A7DC2517B977E500C3ED80 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		086C785617B98FE200CE9FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Growing Pains.app/Growing Pains";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Growing Pains Tests/Growing Pains Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Growing Pains Tests/Growing Pains Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		086C785717B98FE200CE9FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Growing Pains.app/Growing Pains";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Growing Pains Tests/Growing Pains Tests-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Growing Pains Tests/Growing Pains Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		08A7DC2A17B977E500C3ED80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -441,6 +488,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -472,6 +520,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -488,6 +537,7 @@
 		08A7DC2D17B977E500C3ED80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -503,6 +553,7 @@
 		08A7DC2E17B977E500C3ED80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -515,43 +566,17 @@
 			};
 			name = Release;
 		};
-		08A7DC3017B977E500C3ED80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrowingPains2.app/GrowingPains2";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
-				INFOPLIST_FILE = "GrowingPains2Tests/GrowingPains2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		08A7DC3117B977E500C3ED80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrowingPains2.app/GrowingPains2";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
-				INFOPLIST_FILE = "GrowingPains2Tests/GrowingPains2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		086C785517B98FE200CE9FA7 /* Build configuration list for PBXNativeTarget "Growing Pains Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				086C785617B98FE200CE9FA7 /* Debug */,
+				086C785717B98FE200CE9FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		08A7DBE417B977E500C3ED80 /* Build configuration list for PBXProject "GrowingPains2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -568,14 +593,7 @@
 				08A7DC2E17B977E500C3ED80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		08A7DC2F17B977E500C3ED80 /* Build configuration list for PBXNativeTarget "GrowingPains2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				08A7DC3017B977E500C3ED80 /* Debug */,
-				08A7DC3117B977E500C3ED80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

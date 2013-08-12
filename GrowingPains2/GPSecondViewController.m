@@ -19,9 +19,18 @@
 {
   [super viewDidLoad];
   
-  PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-  [testObject setObject:@"bar" forKey:@"foo"];
-  [testObject save];
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    //Call your function or whatever work that needs to be done
+    //Code in this part is run on a background thread
+ 
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    [testObject setObject:@"bar" forKey:@"foo"];
+    [testObject save];
+    
+  });
+  
 }
 
 @end

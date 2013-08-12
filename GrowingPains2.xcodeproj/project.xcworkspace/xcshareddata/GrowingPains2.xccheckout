@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8DECC904-C04B-4981-9833-31577042ABE1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GrowingPains2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>336D8080-2E6D-4547-B23F-096BD9298468</key>
+		<string>ssh://github.com/kmc239/GrowingPains.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GrowingPains2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>336D8080-2E6D-4547-B23F-096BD9298468</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/kmc239/GrowingPains.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>336D8080-2E6D-4547-B23F-096BD9298468</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>336D8080-2E6D-4547-B23F-096BD9298468</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GrowingPains2</string>
+		</dict>
+	</array>
+</dict>
+</plist>
