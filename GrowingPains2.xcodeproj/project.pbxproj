@@ -28,6 +28,18 @@
 		08A7DC1E17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DC2617B977E500C3ED80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC2417B977E500C3ED80 /* InfoPlist.strings */; };
 		08A7DC2917B977E500C3ED80 /* GrowingPains2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC2817B977E500C3ED80 /* GrowingPains2Tests.m */; };
+		08A7DC3717B97B0600C3ED80 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3617B97B0600C3ED80 /* Parse.framework */; };
+		08A7DC3917B97B2000C3ED80 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3817B97B2000C3ED80 /* AudioToolbox.framework */; };
+		08A7DC3B17B97B2800C3ED80 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3A17B97B2800C3ED80 /* CFNetwork.framework */; };
+		08A7DC3D17B97B3500C3ED80 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3C17B97B3500C3ED80 /* CoreLocation.framework */; };
+		08A7DC3F17B97B3E00C3ED80 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC3E17B97B3E00C3ED80 /* libz.1.1.3.dylib */; };
+		08A7DC4117B97B4600C3ED80 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4017B97B4600C3ED80 /* MobileCoreServices.framework */; };
+		08A7DC4317B97B4E00C3ED80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4217B97B4E00C3ED80 /* QuartzCore.framework */; };
+		08A7DC4517B97B5500C3ED80 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4417B97B5500C3ED80 /* Security.framework */; };
+		08A7DC4717B97B5C00C3ED80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4617B97B5C00C3ED80 /* StoreKit.framework */; };
+		08A7DC4917B97B6200C3ED80 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4817B97B6200C3ED80 /* SystemConfiguration.framework */; };
+		08A7DC4F17B9802900C3ED80 /* GPTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC4E17B9802900C3ED80 /* GPTabBarViewController.m */; };
+		08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08A7DBE917B977E500C3ED80 /* GrowingPains2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowingPains2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +81,20 @@
 		08A7DC2517B977E500C3ED80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08A7DC2717B977E500C3ED80 /* GrowingPains2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrowingPains2Tests.h; sourceTree = "<group>"; };
 		08A7DC2817B977E500C3ED80 /* GrowingPains2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrowingPains2Tests.m; sourceTree = "<group>"; };
+		08A7DC3617B97B0600C3ED80 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		08A7DC3817B97B2000C3ED80 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		08A7DC3A17B97B2800C3ED80 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		08A7DC3C17B97B3500C3ED80 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		08A7DC3E17B97B3E00C3ED80 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		08A7DC4017B97B4600C3ED80 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		08A7DC4217B97B4E00C3ED80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		08A7DC4417B97B5500C3ED80 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		08A7DC4617B97B5C00C3ED80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		08A7DC4817B97B6200C3ED80 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		08A7DC4D17B9802800C3ED80 /* GPTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPTabBarViewController.h; sourceTree = "<group>"; };
+		08A7DC4E17B9802900C3ED80 /* GPTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPTabBarViewController.m; sourceTree = "<group>"; };
+		08A7DC5017B9808A00C3ED80 /* GPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPLoginViewController.h; sourceTree = "<group>"; };
+		08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +102,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A7DC4917B97B6200C3ED80 /* SystemConfiguration.framework in Frameworks */,
+				08A7DC4717B97B5C00C3ED80 /* StoreKit.framework in Frameworks */,
+				08A7DC4517B97B5500C3ED80 /* Security.framework in Frameworks */,
+				08A7DC4317B97B4E00C3ED80 /* QuartzCore.framework in Frameworks */,
+				08A7DC4117B97B4600C3ED80 /* MobileCoreServices.framework in Frameworks */,
+				08A7DC3F17B97B3E00C3ED80 /* libz.1.1.3.dylib in Frameworks */,
+				08A7DC3D17B97B3500C3ED80 /* CoreLocation.framework in Frameworks */,
+				08A7DC3B17B97B2800C3ED80 /* CFNetwork.framework in Frameworks */,
+				08A7DC3917B97B2000C3ED80 /* AudioToolbox.framework in Frameworks */,
 				08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */,
 				08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */,
 				08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */,
+				08A7DC3717B97B0600C3ED80 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +144,7 @@
 		08A7DBEA17B977E500C3ED80 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08A7DBE917B977E500C3ED80 /* GrowingPains2.app */,
+				08A7DBE917B977E500C3ED80 /* Growing Pains.app */,
 				08A7DC1A17B977E500C3ED80 /* GrowingPains2Tests.octest */,
 			);
 			name = Products;
@@ -117,6 +153,16 @@
 		08A7DBEB17B977E500C3ED80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08A7DC4817B97B6200C3ED80 /* SystemConfiguration.framework */,
+				08A7DC4617B97B5C00C3ED80 /* StoreKit.framework */,
+				08A7DC4417B97B5500C3ED80 /* Security.framework */,
+				08A7DC4217B97B4E00C3ED80 /* QuartzCore.framework */,
+				08A7DC4017B97B4600C3ED80 /* MobileCoreServices.framework */,
+				08A7DC3E17B97B3E00C3ED80 /* libz.1.1.3.dylib */,
+				08A7DC3C17B97B3500C3ED80 /* CoreLocation.framework */,
+				08A7DC3A17B97B2800C3ED80 /* CFNetwork.framework */,
+				08A7DC3817B97B2000C3ED80 /* AudioToolbox.framework */,
+				08A7DC3617B97B0600C3ED80 /* Parse.framework */,
 				08A7DBEC17B977E500C3ED80 /* UIKit.framework */,
 				08A7DBEE17B977E500C3ED80 /* Foundation.framework */,
 				08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */,
@@ -190,6 +236,10 @@
 		08A7DC3417B977FB00C3ED80 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				08A7DC5017B9808A00C3ED80 /* GPLoginViewController.h */,
+				08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */,
+				08A7DC4D17B9802800C3ED80 /* GPTabBarViewController.h */,
+				08A7DC4E17B9802900C3ED80 /* GPTabBarViewController.m */,
 				08A7DC0717B977E500C3ED80 /* GPFirstViewController.h */,
 				08A7DC0817B977E500C3ED80 /* GPFirstViewController.m */,
 				08A7DC0E17B977E500C3ED80 /* GPSecondViewController.h */,
@@ -226,7 +276,7 @@
 			);
 			name = "Growing Pains";
 			productName = GrowingPains2;
-			productReference = 08A7DBE917B977E500C3ED80 /* GrowingPains2.app */;
+			productReference = 08A7DBE917B977E500C3ED80 /* Growing Pains.app */;
 			productType = "com.apple.product-type.application";
 		};
 		08A7DC1917B977E500C3ED80 /* GrowingPains2Tests */ = {
@@ -328,6 +378,8 @@
 				08A7DBFD17B977E500C3ED80 /* GPAppDelegate.m in Sources */,
 				08A7DC0917B977E500C3ED80 /* GPFirstViewController.m in Sources */,
 				08A7DC1017B977E500C3ED80 /* GPSecondViewController.m in Sources */,
+				08A7DC4F17B9802900C3ED80 /* GPTabBarViewController.m in Sources */,
+				08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +488,10 @@
 		08A7DC2D17B977E500C3ED80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
 				INFOPLIST_FILE = "GrowingPains2/GrowingPains2-Info.plist";
@@ -447,6 +503,10 @@
 		08A7DC2E17B977E500C3ED80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
 				INFOPLIST_FILE = "GrowingPains2/GrowingPains2-Info.plist";
