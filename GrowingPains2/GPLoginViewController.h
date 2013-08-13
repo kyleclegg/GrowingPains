@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPLoginViewController : UIViewController
+@interface GPLoginViewController : UIViewController <UITextFieldDelegate>
 
-- (IBAction)dismissPressed:(id)sender;
+- (IBAction)logInPressed:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "GPTabBarViewController.h"
+#import <Parse/Parse.h>
 
 @interface GPTabBarViewController ()
 
@@ -19,9 +20,9 @@
   [super viewDidAppear:animated];
   
 
-  // if not logged in
-//  [self performSegueWithIdentifier:@"Login" sender:self];
-
+  PFUser *currentUser = [PFUser currentUser];
+  if (!currentUser)
+    [self performSegueWithIdentifier:@"Login" sender:self];
 }
 
 @end

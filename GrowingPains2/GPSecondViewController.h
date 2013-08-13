@@ -10,4 +10,6 @@
 
 @interface GPSecondViewController : UIViewController
 
+- (IBAction)logOutPressed:(id)sender;
+
 @end

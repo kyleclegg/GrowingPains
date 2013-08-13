@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		086C784717B98FE200CE9FA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086C784617B98FE200CE9FA7 /* XCTest.framework */; };
-		086C784817B98FE200CE9FA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
-		086C784917B98FE200CE9FA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
-		086C784F17B98FE200CE9FA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 086C784D17B98FE200CE9FA7 /* InfoPlist.strings */; };
-		086C785117B98FE200CE9FA7 /* Growing_Pains_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 086C785017B98FE200CE9FA7 /* Growing_Pains_Tests.m */; };
+		0833F18917BA1FB600D55D39 /* GPSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0833F18817BA1FB600D55D39 /* GPSignUpViewController.m */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */; };
@@ -42,23 +38,10 @@
 		08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		086C785317B98FE200CE9FA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08A7DBE117B977E500C3ED80 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 08A7DBE817B977E500C3ED80;
-			remoteInfo = "Growing Pains";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		086C784517B98FE200CE9FA7 /* Growing Pains Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Growing Pains Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0833F18717BA1FB600D55D39 /* GPSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSignUpViewController.h; sourceTree = "<group>"; };
+		0833F18817BA1FB600D55D39 /* GPSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSignUpViewController.m; sourceTree = "<group>"; };
 		086C784617B98FE200CE9FA7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		086C784C17B98FE200CE9FA7 /* Growing Pains Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Growing Pains Tests-Info.plist"; sourceTree = "<group>"; };
-		086C784E17B98FE200CE9FA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		086C785017B98FE200CE9FA7 /* Growing_Pains_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Growing_Pains_Tests.m; sourceTree = "<group>"; };
-		086C785217B98FE200CE9FA7 /* Growing Pains Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Growing Pains Tests-Prefix.pch"; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,16 +82,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		086C784217B98FE200CE9FA7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				086C784717B98FE200CE9FA7 /* XCTest.framework in Frameworks */,
-				086C784917B98FE200CE9FA7 /* UIKit.framework in Frameworks */,
-				086C784817B98FE200CE9FA7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		08A7DBE617B977E500C3ED80 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,30 +105,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		086C784A17B98FE200CE9FA7 /* Growing Pains Tests */ = {
-			isa = PBXGroup;
-			children = (
-				086C785017B98FE200CE9FA7 /* Growing_Pains_Tests.m */,
-				086C784B17B98FE200CE9FA7 /* Supporting Files */,
-			);
-			path = "Growing Pains Tests";
-			sourceTree = "<group>";
-		};
-		086C784B17B98FE200CE9FA7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				086C784C17B98FE200CE9FA7 /* Growing Pains Tests-Info.plist */,
-				086C784D17B98FE200CE9FA7 /* InfoPlist.strings */,
-				086C785217B98FE200CE9FA7 /* Growing Pains Tests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		08A7DBE017B977E500C3ED80 = {
 			isa = PBXGroup;
 			children = (
 				08A7DBF217B977E500C3ED80 /* GrowingPains2 */,
-				086C784A17B98FE200CE9FA7 /* Growing Pains Tests */,
 				08A7DBEB17B977E500C3ED80 /* Frameworks */,
 				08A7DBEA17B977E500C3ED80 /* Products */,
 			);
@@ -165,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				08A7DBE917B977E500C3ED80 /* Growing Pains.app */,
-				086C784517B98FE200CE9FA7 /* Growing Pains Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +192,8 @@
 			children = (
 				08A7DC5017B9808A00C3ED80 /* GPLoginViewController.h */,
 				08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */,
+				0833F18717BA1FB600D55D39 /* GPSignUpViewController.h */,
+				0833F18817BA1FB600D55D39 /* GPSignUpViewController.m */,
 				08A7DC4D17B9802800C3ED80 /* GPTabBarViewController.h */,
 				08A7DC4E17B9802900C3ED80 /* GPTabBarViewController.m */,
 				08A7DC0717B977E500C3ED80 /* GPFirstViewController.h */,
@@ -264,24 +218,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		086C784417B98FE200CE9FA7 /* Growing Pains Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 086C785517B98FE200CE9FA7 /* Build configuration list for PBXNativeTarget "Growing Pains Tests" */;
-			buildPhases = (
-				086C784117B98FE200CE9FA7 /* Sources */,
-				086C784217B98FE200CE9FA7 /* Frameworks */,
-				086C784317B98FE200CE9FA7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				086C785417B98FE200CE9FA7 /* PBXTargetDependency */,
-			);
-			name = "Growing Pains Tests";
-			productName = "Growing Pains Tests";
-			productReference = 086C784517B98FE200CE9FA7 /* Growing Pains Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		08A7DBE817B977E500C3ED80 /* Growing Pains */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08A7DC2C17B977E500C3ED80 /* Build configuration list for PBXNativeTarget "Growing Pains" */;
@@ -308,11 +244,6 @@
 				CLASSPREFIX = GP;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Paperplate LLC";
-				TargetAttributes = {
-					086C784417B98FE200CE9FA7 = {
-						TestTargetID = 08A7DBE817B977E500C3ED80;
-					};
-				};
 			};
 			buildConfigurationList = 08A7DBE417B977E500C3ED80 /* Build configuration list for PBXProject "GrowingPains2" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -327,20 +258,11 @@
 			projectRoot = "";
 			targets = (
 				08A7DBE817B977E500C3ED80 /* Growing Pains */,
-				086C784417B98FE200CE9FA7 /* Growing Pains Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		086C784317B98FE200CE9FA7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				086C784F17B98FE200CE9FA7 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		08A7DBE717B977E500C3ED80 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,14 +282,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		086C784117B98FE200CE9FA7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				086C785117B98FE200CE9FA7 /* Growing_Pains_Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		08A7DBE517B977E500C3ED80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,28 +292,13 @@
 				08A7DC1017B977E500C3ED80 /* GPSecondViewController.m in Sources */,
 				08A7DC4F17B9802900C3ED80 /* GPTabBarViewController.m in Sources */,
 				08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */,
+				0833F18917BA1FB600D55D39 /* GPSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		086C785417B98FE200CE9FA7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 08A7DBE817B977E500C3ED80 /* Growing Pains */;
-			targetProxy = 086C785317B98FE200CE9FA7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		086C784D17B98FE200CE9FA7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				086C784E17B98FE200CE9FA7 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		08A7DBF517B977E500C3ED80 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -419,63 +318,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		086C785617B98FE200CE9FA7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Growing Pains.app/Growing Pains";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Growing Pains Tests/Growing Pains Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Growing Pains Tests/Growing Pains Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		086C785717B98FE200CE9FA7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Growing Pains.app/Growing Pains";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Growing Pains Tests/Growing Pains Tests-Prefix.pch";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Growing Pains Tests/Growing Pains Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		08A7DC2A17B977E500C3ED80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -569,14 +411,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		086C785517B98FE200CE9FA7 /* Build configuration list for PBXNativeTarget "Growing Pains Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				086C785617B98FE200CE9FA7 /* Debug */,
-				086C785717B98FE200CE9FA7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		08A7DBE417B977E500C3ED80 /* Build configuration list for PBXProject "GrowingPains2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

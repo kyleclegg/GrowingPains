@@ -7,6 +7,7 @@
 //
 
 #import "GPLoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface GPLoginViewController ()
 
@@ -20,9 +21,38 @@
 	// Do any additional setup after loading the view.
 }
 
-- (IBAction)dismissPressed:(id)sender
+#pragma mark - Actions
+
+- (IBAction)logInPressed:(id)sender
 {
-  [self dismissViewControllerAnimated:YES completion:nil];
+  [PFUser logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text
+                                  block:^(PFUser *user, NSError *error) {
+                                    if (user) {
+                                      [self dismissViewControllerAnimated:YES completion:nil];
+                                    } else {
+                                      NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                                      NSLog(@"error: %@", errorString);
+                                    }
+                                  }];
+  
+
+}
+
+- (IBAction)dismissKeyboard:(id)sender
+{
+  [self.view endEditing:YES];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+  if (textField == self.emailTextField)
+    [self.passwordTextField becomeFirstResponder];
+  else
+    [self performSelector:@selector(logInPressed:) withObject:nil];
+  
+  return YES;
 }
 
 @end
