@@ -8,13 +8,17 @@
 
 #import "GPAppDelegate.h"
 #import <Parse/Parse.h>
+#import "GPHelpers.h"
 
 @implementation GPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [Parse setApplicationId:@"tmitmsSZ3G8OUXmvfkA77uL5JeYDyPcNnBGa3Akl" clientKey:@"MZ6xc5neXB5ZZbrEx92x4tJdqcmmHOa7g1zj71ar"];
+  [PFTwitterUtils initializeWithConsumerKey:@"wMnNWNPvnS7tlNZBNIQhGg" consumerSecret:@"DMQZAm9LKxxHogSQIZW50suhomusi8pbHyirl9sTFTI"];
   [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+  
+  [self customizeAppearance];
   
   return YES;
 }
@@ -44,6 +48,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)customizeAppearance
+{
+  [[UINavigationBar appearance] setBarTintColor:[GPHelpers gpGreen]];
 }
 
 @end

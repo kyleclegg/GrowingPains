@@ -10,8 +10,11 @@
 
 @interface GPLoginViewController : UIViewController <UITextFieldDelegate>
 
-- (IBAction)logInPressed:(id)sender;
+- (IBAction)loginPressed:(id)sender;
+- (IBAction)twitterLoginPressed:(id)sender;
+- (IBAction)facebookLoginPressed:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

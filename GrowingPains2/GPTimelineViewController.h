@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPFirstViewController : UIViewController
+@interface GPTimelineViewController : UIViewController
 
 @end

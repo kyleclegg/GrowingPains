@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Paperplate LLC. All rights reserved.
 //
 
-#import "GPSecondViewController.h"
+#import "GPEntryViewController.h"
 #import <Parse/Parse.h>
 
-@interface GPSecondViewController ()
+@interface GPEntryViewController ()
 
 @end
 
-@implementation GPSecondViewController
+@implementation GPEntryViewController
 
 - (void)viewDidLoad
 {

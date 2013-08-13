@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPSecondViewController : UIViewController
+@interface GPEntryViewController : UIViewController
 
 - (IBAction)logOutPressed:(id)sender;
 

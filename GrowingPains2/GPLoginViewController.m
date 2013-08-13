@@ -23,24 +23,50 @@
 
 #pragma mark - Actions
 
-- (IBAction)logInPressed:(id)sender
+- (IBAction)loginPressed:(id)sender
 {
   [PFUser logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text
                                   block:^(PFUser *user, NSError *error) {
-                                    if (user) {
+                                    if (user)
+                                    {
                                       [self dismissViewControllerAnimated:YES completion:nil];
-                                    } else {
+                                    }
+                                    else
+                                    {
                                       NSString *errorString = [[error userInfo] objectForKey:@"error"];
                                       NSLog(@"error: %@", errorString);
                                     }
                                   }];
-  
-
 }
 
 - (IBAction)dismissKeyboard:(id)sender
 {
   [self.view endEditing:YES];
+}
+
+- (IBAction)twitterLoginPressed:(id)sender
+{
+  [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+    if (user)
+    {
+      if (user.isNew)
+        NSLog(@"User signed up and logged in with Twitter!");
+      else
+        NSLog(@"User logged in with Twitter!");
+      
+      [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+      NSString *errorString = [[error userInfo] objectForKey:@"error"];
+      NSLog(@"error: %@", errorString);
+    }
+  }];
+}
+
+- (IBAction)facebookLoginPressed:(id)sender
+{
+  
 }
 
 #pragma mark - UITextFieldDelegate
@@ -50,7 +76,7 @@
   if (textField == self.emailTextField)
     [self.passwordTextField becomeFirstResponder];
   else
-    [self performSelector:@selector(logInPressed:) withObject:nil];
+    [self performSelector:@selector(loginPressed:) withObject:nil];
   
   return YES;
 }
