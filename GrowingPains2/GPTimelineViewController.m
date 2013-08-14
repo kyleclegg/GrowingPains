@@ -7,6 +7,7 @@
 //
 
 #import "GPTimelineViewController.h"
+#import <Parse/Parse.h>
 
 @interface GPTimelineViewController ()
 
@@ -26,8 +27,12 @@
 {
   [super viewDidAppear:animated];
   
+  PFUser *currentUser = [PFUser currentUser];
+  if (!currentUser)
+    [self performSegueWithIdentifier:@"Login" sender:self];
+  
   self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-  NSTimer* timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gravityIt) userInfo:nil repeats:YES];
+//  NSTimer* timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gravityIt) userInfo:nil repeats:YES];
 //  [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
@@ -47,6 +52,13 @@
   
   UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[ box ]];
   [self.animator addBehavior:gravityBehavior];
+}
+
+#pragma mark - Actions
+
+- (IBAction)settingsPressed:(id)sender
+{
+  [self performSegueWithIdentifier:@"Settings" sender:self];
 }
 
 @end

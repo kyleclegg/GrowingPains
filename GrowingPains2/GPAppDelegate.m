@@ -52,7 +52,7 @@
 
 - (void)customizeAppearance
 {
-  [[UINavigationBar appearance] setBarTintColor:[GPHelpers gpGreen]];
+  [[UINavigationBar appearance] setBarTintColor:[UIColor lightGrayColor]];
 }
 
 @end
