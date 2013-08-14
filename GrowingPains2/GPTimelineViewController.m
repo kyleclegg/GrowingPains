@@ -54,11 +54,4 @@
   [self.animator addBehavior:gravityBehavior];
 }
 
-#pragma mark - Actions
-
-- (IBAction)settingsPressed:(id)sender
-{
-  [self performSegueWithIdentifier:@"Settings" sender:self];
-}
-
 @end

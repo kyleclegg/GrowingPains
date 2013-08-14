@@ -10,8 +10,11 @@
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import <Parse/Parse.h>
+#import "GPJournal.h"
 
 @interface GPJournalsViewController ()
+
+@property (strong, nonatomic) NSArray *journals;
 
 @end
 
@@ -20,7 +23,29 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  
+  // Find all journals given the current user
+  PFQuery *query = [PFQuery queryWithClassName:@"Journal"];
+  [query whereKey:@"user" equalTo:[PFUser currentUser]];
+  [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    if (!error)
+    {
+      NSLog(@"Successfully retrieved %d journals.", objects.count);
+      self.journals = objects;
+      [self.tableView reloadData];
+      
+    } else {
+      // Log details of the failure
+      NSLog(@"Error: %@ %@", error, [error userInfo]);
+    }
+  }];
 }
 
 #pragma mark - Actions
@@ -41,25 +66,36 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return 2;
+  return self.journals.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  NSString *cellIdentifier = @"Cell";
+  NSString *cellIdentifier = @"JournalCell";
   
-  NSLog(@"hi");
-  
-  if (indexPath.row == 0)
-    cellIdentifier = @"JournalCell";
-  else
+  // If last row, it is the add journal button
+  if (indexPath.row == self.journals.count)
     cellIdentifier = @"AddJournal";
-
+  
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+  
+  if (indexPath.row < self.journals.count)
+  {
+    GPJournal *journal = [self.journals objectAtIndex:indexPath.row];
+    cell.textLabel.text = journal.name;
+  }
   
   // Configure the cell...
   
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+  if (indexPath.row < self.journals.count)
+    [self.sidePanelController showCenterPanelAnimated:YES];
 }
 
 /*

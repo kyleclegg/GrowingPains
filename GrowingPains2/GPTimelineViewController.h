@@ -10,6 +10,4 @@
 
 @interface GPTimelineViewController : UIViewController
 
-- (IBAction)settingsPressed:(id)sender;
-
 @end

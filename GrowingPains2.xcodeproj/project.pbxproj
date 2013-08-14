@@ -13,6 +13,9 @@
 		0896E56017BB45E400BFD8DD /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E55E17BB45E400BFD8DD /* UIViewController+JASidePanel.m */; };
 		0896E56417BB49B700BFD8DD /* GPSidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E56317BB49B700BFD8DD /* GPSidePanelController.m */; };
 		0896E56717BB53B100BFD8DD /* GPJournalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E56617BB53B100BFD8DD /* GPJournalsViewController.m */; };
+		0896E56A17BB660200BFD8DD /* GPEditJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E56917BB660200BFD8DD /* GPEditJournalViewController.m */; };
+		0896E56D17BBF39700BFD8DD /* GPJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E56C17BBF39700BFD8DD /* GPJournal.m */; };
+		0896E57317BBF7ED00BFD8DD /* GPAddJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E57217BBF7ED00BFD8DD /* GPAddJournalViewController.m */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */; };
@@ -55,6 +58,12 @@
 		0896E56317BB49B700BFD8DD /* GPSidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSidePanelController.m; sourceTree = "<group>"; };
 		0896E56517BB53B100BFD8DD /* GPJournalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPJournalsViewController.h; sourceTree = "<group>"; };
 		0896E56617BB53B100BFD8DD /* GPJournalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPJournalsViewController.m; sourceTree = "<group>"; };
+		0896E56817BB660200BFD8DD /* GPEditJournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEditJournalViewController.h; sourceTree = "<group>"; };
+		0896E56917BB660200BFD8DD /* GPEditJournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEditJournalViewController.m; sourceTree = "<group>"; };
+		0896E56B17BBF39700BFD8DD /* GPJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPJournal.h; sourceTree = "<group>"; };
+		0896E56C17BBF39700BFD8DD /* GPJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPJournal.m; sourceTree = "<group>"; };
+		0896E57117BBF7ED00BFD8DD /* GPAddJournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPAddJournalViewController.h; sourceTree = "<group>"; };
+		0896E57217BBF7ED00BFD8DD /* GPAddJournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPAddJournalViewController.m; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -207,6 +216,8 @@
 		08A7DC3217B977ED00C3ED80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0896E56B17BBF39700BFD8DD /* GPJournal.h */,
+				0896E56C17BBF39700BFD8DD /* GPJournal.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -231,6 +242,10 @@
 				08A7DC0817B977E500C3ED80 /* GPTimelineViewController.m */,
 				0896E56517BB53B100BFD8DD /* GPJournalsViewController.h */,
 				0896E56617BB53B100BFD8DD /* GPJournalsViewController.m */,
+				0896E57117BBF7ED00BFD8DD /* GPAddJournalViewController.h */,
+				0896E57217BBF7ED00BFD8DD /* GPAddJournalViewController.m */,
+				0896E56817BB660200BFD8DD /* GPEditJournalViewController.h */,
+				0896E56917BB660200BFD8DD /* GPEditJournalViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -321,9 +336,12 @@
 				0896E55617BAE62F00BFD8DD /* GPHelpers.m in Sources */,
 				08A7DBF917B977E500C3ED80 /* main.m in Sources */,
 				08A7DBFD17B977E500C3ED80 /* GPAppDelegate.m in Sources */,
+				0896E57317BBF7ED00BFD8DD /* GPAddJournalViewController.m in Sources */,
 				08A7DC0917B977E500C3ED80 /* GPTimelineViewController.m in Sources */,
+				0896E56A17BB660200BFD8DD /* GPEditJournalViewController.m in Sources */,
 				0896E56017BB45E400BFD8DD /* UIViewController+JASidePanel.m in Sources */,
 				0896E55F17BB45E400BFD8DD /* JASidePanelController.m in Sources */,
+				0896E56D17BBF39700BFD8DD /* GPJournal.m in Sources */,
 				08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */,
 				0833F18917BA1FB600D55D39 /* GPSignUpViewController.m in Sources */,
 				0896E56717BB53B100BFD8DD /* GPJournalsViewController.m in Sources */,
