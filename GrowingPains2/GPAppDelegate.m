@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "GPHelpers.h"
 #import "GPJournal.h"
+#import "GPSidePanelController.h"
 
 @implementation GPAppDelegate
 
@@ -20,6 +21,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // Create pointers for our main two screens
+  UINavigationController *masterNav = (UINavigationController *)((GPSidePanelController *)self.window.rootViewController).leftPanel;
+  self.journalsController = (GPJournalsViewController *)masterNav.topViewController;
+  
+  // set the top level controller
+  GPSidePanelController *sidePanel = ((GPSidePanelController *)self.window.rootViewController);
+  UINavigationController* nav = (UINavigationController *)sidePanel.centerPanel;
+  self.homeController = (GPHomeViewController *)nav.topViewController;
+  
+  // Parse setup
   [GPJournal registerSubclass];
   [Parse setApplicationId:@"tmitmsSZ3G8OUXmvfkA77uL5JeYDyPcNnBGa3Akl" clientKey:@"MZ6xc5neXB5ZZbrEx92x4tJdqcmmHOa7g1zj71ar"];
   [PFTwitterUtils initializeWithConsumerKey:@"wMnNWNPvnS7tlNZBNIQhGg" consumerSecret:@"DMQZAm9LKxxHogSQIZW50suhomusi8pbHyirl9sTFTI"];

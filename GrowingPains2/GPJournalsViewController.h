@@ -10,6 +10,8 @@
 
 @interface GPJournalsViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *journals;
+
 - (IBAction)logoutPressed:(id)sender;
 
 @end

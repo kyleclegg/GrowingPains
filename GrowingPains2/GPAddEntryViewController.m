@@ -9,11 +9,8 @@
 #import "GPAddEntryViewController.h"
 #import "GPAppDelegate.h"
 #import "UIImage+ImageResizing.h"
-#import "DAProgressOverlayView.h"
 
 @interface GPAddEntryViewController ()
-
-@property (strong, nonatomic) DAProgressOverlayView *progressOverlayView;
 
 @end
 
@@ -25,10 +22,6 @@
 
   if (self.image != nil)
     self.imageView.image = self.image;
-  
-  self.progressOverlayView = [[DAProgressOverlayView alloc] initWithFrame:self.imageView.bounds];
-  [self.imageView addSubview:self.progressOverlayView];
-  self.progressOverlayView.hidden = YES;
 }
 
 #pragma mark - Actions
@@ -46,31 +39,20 @@
 
 - (void)saveEntry
 {
-  self.progressOverlayView.hidden = NO;
+  CGSize newSize = CGSizeMake(640, 640);
+//  UIImage *scaledImage = [self.image imageWithSize:CGSizeMake(640, 640) contentMode:UIViewContentModeScaleAspectFill];
+  UIGraphicsBeginImageContext(newSize);
+  [self.image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
   
-  UIImage *scaledImage = [self.image imageWithSize:CGSizeMake(640, 640) contentMode:UIViewContentModeScaleAspectFill];
-  NSData *imageData = UIImageJPEGRepresentation(scaledImage, 1.0);
+  NSData *imageData = UIImagePNGRepresentation(newImage);
   PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
   [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     // Handle success or failure here ...
-    NSLog(@"block");
   } progressBlock:^(int percentDone) {
     // Update your progress spinner here. percentDone will be between 0 and 100.
-//    NSLog(@"progress: %i", percentDone);
-    
-    CGFloat progress = (float)percentDone/100;
-    NSLog(@"progress is %f", progress);
-    if (progress > 1) {
-      [UIView animateWithDuration:0.2 delay:0. options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.progressOverlayView.alpha = 0.;
-      } completion:^(BOOL finished) {
-        self.progressOverlayView.progress = 0.;
-        self.progressOverlayView.alpha = 1.;
-        self.progressOverlayView.hidden = YES;
-      }];
-    } else {
-      self.progressOverlayView.progress = progress;
-    }
+    NSLog(@"progress: %i", percentDone);
     
   }];
   
@@ -79,9 +61,11 @@
   [entry setObject:self.currentJournal          forKey:@"journal"];
   [entry setObject:imageFile                    forKey:@"image"];
   [entry saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-    NSLog(@"done saving entry, popping it like it's hot");
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.delegate respondsToSelector:@selector(refreshEntries)])
+      [self.delegate refreshEntries];
   }];
+  
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITextFieldDelegate

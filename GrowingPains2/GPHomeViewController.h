@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "GPJournal.h"
+#import "GPAddEntryViewController.h"
 
-@interface GPHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
+@interface GPHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, GPAddEntryDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) GPJournal *currentJournal;
 
 - (IBAction)addEntryPressed:(id)sender;
 

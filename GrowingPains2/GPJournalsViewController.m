@@ -15,8 +15,6 @@
 
 @interface GPJournalsViewController ()
 
-@property (strong, nonatomic) NSArray *journals;
-
 @end
 
 @implementation GPJournalsViewController
@@ -100,7 +98,7 @@
   if (indexPath.row < self.journals.count)
   {
     // Update current journal and return to home view controller
-    [GPAppDelegate appDelegate].currentJournal = [self.journals objectAtIndex:indexPath.row];
+    [GPAppDelegate appDelegate].homeController.currentJournal = [self.journals objectAtIndex:indexPath.row];
     [self.sidePanelController showCenterPanelAnimated:YES];
   }
 }

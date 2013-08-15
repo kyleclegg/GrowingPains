@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "GPJournal.h"
+#import "GPJournalsViewController.h"
+#import "GPHomeViewController.h"
 
 @interface GPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) GPJournal *currentJournal;
+
+@property (strong, nonatomic) GPJournalsViewController *journalsController;
+@property (strong, nonatomic) GPHomeViewController *homeController;
 
 + (GPAppDelegate *)appDelegate;
 

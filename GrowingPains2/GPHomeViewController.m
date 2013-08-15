@@ -23,6 +23,7 @@
 @property (strong, nonatomic) UIPinchGestureRecognizer *pinchRecognizer;
 @property (strong, nonatomic) UIImageView *selectedImageView;
 @property (strong, nonatomic) UIImage *capturedImage;
+@property (strong, nonatomic) NSArray *entries;
 
 @end
 
@@ -34,6 +35,18 @@
   self.images = @[ @"evaplane.png", @"evasilly.png", @"evafish.png", @"evadress.png"];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  
+  PFUser *currentUser = [PFUser currentUser];
+  if (currentUser)
+  {
+    [self currentJournals];
+    [self currentJournalEntries];
+  }
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
@@ -41,16 +54,6 @@
   PFUser *currentUser = [PFUser currentUser];
   if (!currentUser)
     [self performSegueWithIdentifier:@"Login" sender:self];
-  
-  if ([GPAppDelegate appDelegate].currentJournal != nil)
-  {
-    // Find all posts by the current user
-    PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
-    [query whereKey:@"journal" equalTo:[GPAppDelegate appDelegate].currentJournal];
-    NSArray *entries = [query findObjects];
-    NSLog(@"found these entries %@", entries);
-  }
-
   
   [self setupGestureRecognizers];
 //  self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
@@ -88,6 +91,35 @@
   [self.animator addBehavior:gravityBehavior];
 }
 
+#pragma mark - Parse API Calls
+
+- (void)currentJournals
+{
+  // Find all journals given the current user
+  PFQuery *query = [PFQuery queryWithClassName:@"Journal"];
+  [query whereKey:@"user" equalTo:[PFUser currentUser]];
+  [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    if (!error)
+    {
+      [GPAppDelegate appDelegate].journalsController.journals = objects;
+    }
+  }];
+}
+
+- (void)currentJournalEntries
+{
+  if (self.currentJournal != nil)
+  {
+    // Find all posts by the current user
+    PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
+    [query whereKey:@"journal" equalTo:self.currentJournal];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+      self.entries = objects;
+      [self.tableView reloadData];
+    }];
+  }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -97,7 +129,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return self.images.count * 4;
+  if (self.entries)
+    return self.entries.count;
+  else
+    return 0;
 }
 
 #pragma mark - UITableViewDelegate
@@ -187,7 +222,6 @@
       return imageView;
     }
   }
-  
   return nil;
 }
 
@@ -204,10 +238,10 @@
                                                 otherButtonTitles: nil];
     [myAlertView show];
   }
-  else if ([GPAppDelegate appDelegate].currentJournal == nil)
+  else if (self.currentJournal == nil)
   {
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                          message:@"Create your first journal to begin"
+                                                          message:@"Select or create a journal to begin"
                                                          delegate:self
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles: nil];
@@ -245,7 +279,6 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
   [picker dismissViewControllerAnimated:YES completion:nil];
-  
 }
 
 #pragma mark - Segue
@@ -256,8 +289,19 @@
   {
     GPAddEntryViewController *controller = [segue destinationViewController];
     controller.image = self.capturedImage;
-    controller.currentJournal = [GPAppDelegate appDelegate].currentJournal;
+    controller.currentJournal = self.currentJournal;
+    controller.delegate = self;
   }
 }
+
+#pragma mark - GPAddEntryDelegate
+
+- (void)refreshEntries
+{
+  NSLog(@"time to refresh");
+  [self currentJournalEntries];
+}
+
+#pragma mark - Private methods
 
 @end
