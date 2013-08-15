@@ -24,6 +24,7 @@
 		0896E5B717BCCE8200BFD8DD /* UIImage+ImageResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */; };
 		0896E5BA17BCCEAF00BFD8DD /* UIKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */; };
 		0896E5BD17BCCEC400BFD8DD /* CoreGraphicsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */; };
+		0896E5C717BD42F800BFD8DD /* GPEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5C617BD42F800BFD8DD /* GPEntry.m */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */; };
@@ -84,6 +85,8 @@
 		0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitAdditions.m; sourceTree = "<group>"; };
 		0896E5BB17BCCEC400BFD8DD /* CoreGraphicsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsAdditions.h; sourceTree = "<group>"; };
 		0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsAdditions.m; sourceTree = "<group>"; };
+		0896E5C517BD42F800BFD8DD /* GPEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEntry.h; sourceTree = "<group>"; };
+		0896E5C617BD42F800BFD8DD /* GPEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEntry.m; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -260,6 +263,8 @@
 			children = (
 				0896E56B17BBF39700BFD8DD /* GPJournal.h */,
 				0896E56C17BBF39700BFD8DD /* GPJournal.m */,
+				0896E5C517BD42F800BFD8DD /* GPEntry.h */,
+				0896E5C617BD42F800BFD8DD /* GPEntry.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */,
 				0833F18917BA1FB600D55D39 /* GPSignUpViewController.m in Sources */,
 				0896E56717BB53B100BFD8DD /* GPJournalsViewController.m in Sources */,
+				0896E5C717BD42F800BFD8DD /* GPEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "GPAddEntryViewController.h"
 #import "GPAppDelegate.h"
 #import "UIImage+ImageResizing.h"
+#import "GPEntry.h"
 
 @interface GPAddEntryViewController ()
 
@@ -56,10 +57,11 @@
     
   }];
   
-  PFObject *entry = [PFObject objectWithClassName:@"Entry"];
-  [entry setObject:self.captionTextField.text   forKey:@"caption"];
-  [entry setObject:self.currentJournal          forKey:@"journal"];
-  [entry setObject:imageFile                    forKey:@"image"];
+  GPEntry *entry = [[GPEntry alloc] init];
+  entry.caption = self.captionTextField.text;
+  entry.journal = self.currentJournal;
+  entry.image = imageFile;
+  
   [entry saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if ([self.delegate respondsToSelector:@selector(refreshEntries)])
       [self.delegate refreshEntries];

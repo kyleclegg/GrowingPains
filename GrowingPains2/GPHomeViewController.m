@@ -12,6 +12,7 @@
 #import "GPAddEntryViewController.h"
 #import "GPAppDelegate.h"
 #import "GPSidePanelController.h"
+#import "GPEntry.h"
 
 @interface GPHomeViewController () <UIGestureRecognizerDelegate> {
   CGFloat lastRotation;
@@ -142,10 +143,13 @@
   static NSString *cellIdentifier = @"EntryCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
   UIImageView *iv = (UIImageView *)[cell viewWithTag:100];
-  if (indexPath.row < 4)
-    iv.image = [UIImage imageNamed:[self.images objectAtIndex:indexPath.row]];
-  else
-    iv.image = [UIImage imageNamed:[self.images objectAtIndex:0]];
+  GPEntry *entry = [self.entries objectAtIndex:indexPath.row];
+  PFFile *imageFile = entry.image;
+  [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    if (!error) {
+      iv.image = [UIImage imageWithData:data];
+    }
+  }];
   
   return cell;
 }

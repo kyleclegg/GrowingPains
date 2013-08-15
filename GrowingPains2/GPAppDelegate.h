@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GPJournal.h"
 #import "GPJournalsViewController.h"
 #import "GPHomeViewController.h"
 
