@@ -137,7 +137,6 @@
   [cell addSubview:imageView];
   
   GPEntry *entry = [self.entries objectAtIndex:indexPath.row];
-  imageView.image = [UIImage imageNamed:@"evadress.png"];
   imageView.file = entry.image;
   [imageView loadInBackground];
   
