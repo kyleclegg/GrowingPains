@@ -23,7 +23,7 @@
 {
   [super viewDidLoad];
   
-  
+  self.delegate = [GPAppDelegate appDelegate].homeController;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,6 +100,9 @@
     // Update current journal and return to home view controller
     [GPAppDelegate appDelegate].homeController.currentJournal = [self.journals objectAtIndex:indexPath.row];
     [self.sidePanelController showCenterPanelAnimated:YES];
+    
+    if ([self.delegate respondsToSelector:@selector(refreshEntries)])
+      [self.delegate refreshEntries];
   }
 }
 

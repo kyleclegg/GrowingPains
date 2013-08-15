@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GPJournalSelectedDelegate <NSObject>
+
+- (void)refreshEntries;
+
+@end
+
 @interface GPJournalsViewController : UITableViewController
 
+@property (weak, nonatomic) id<GPJournalSelectedDelegate> delegate;
 @property (strong, nonatomic) NSArray *journals;
 
 - (IBAction)logoutPressed:(id)sender;
