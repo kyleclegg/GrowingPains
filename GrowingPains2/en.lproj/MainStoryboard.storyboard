@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login View Controller - Growing Pains-->
         <scene sceneID="UN7-zU-uHg">
             <objects>
                 <viewController id="4K3-6U-Wnt" customClass="GPLoginViewController" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                             <outletCollection property="gestureRecognizers" destination="Krx-VM-B0K" appends="YES" id="L4T-5y-Xdr"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="BK3-G5-nwo"/>
+                    <navigationItem key="navigationItem" title="Growing Pains" id="BK3-G5-nwo"/>
                     <connections>
                         <outlet property="emailTextField" destination="2zu-ik-ptJ" id="6y8-zV-XSP"/>
                         <outlet property="passwordTextField" destination="rZE-2x-2WC" id="onm-jk-HrU"/>
@@ -99,9 +99,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="643" y="-1080"/>
+            <point key="canvasLocation" x="700" y="-1600"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up View Controller - Sign Up-->
         <scene sceneID="lsj-Ey-4NX">
             <objects>
                 <viewController id="LIP-zp-Hgk" customClass="GPSignUpViewController" sceneMemberID="viewController">
@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kyle" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-1T-VHH">
-                                <rect key="frame" x="59" y="58" width="202" height="30"/>
+                                <rect key="frame" x="59" y="109" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -123,7 +123,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Clegg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXy-ZM-sTV">
-                                <rect key="frame" x="59" y="96" width="202" height="30"/>
+                                <rect key="frame" x="59" y="147" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kyle.clegg@gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LzI-H4-7w4">
-                                <rect key="frame" x="59" y="134" width="202" height="30"/>
+                                <rect key="frame" x="59" y="185" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -141,7 +141,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYw-Lj-RWN">
-                                <rect key="frame" x="59" y="172" width="202" height="30"/>
+                                <rect key="frame" x="59" y="223" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -150,7 +150,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNV-pr-O0w">
-                                <rect key="frame" x="115" y="210" width="91" height="30"/>
+                                <rect key="frame" x="115" y="261" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Let's Do This">
@@ -167,7 +167,7 @@
                             <outletCollection property="gestureRecognizers" destination="lUs-Nt-arA" appends="YES" id="nWM-dQ-I97"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="L9J-EC-ceT"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="L9J-EC-ceT"/>
                     <connections>
                         <outlet property="emailTextField" destination="LzI-H4-7w4" id="dBh-Sm-FdE"/>
                         <outlet property="firstNameTextField" destination="pt6-1T-VHH" id="kFu-W0-JLX"/>
@@ -182,7 +182,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1179" y="-1080"/>
+            <point key="canvasLocation" x="1172" y="-1600"/>
         </scene>
         <!--Timeline View Controller - First-->
         <scene sceneID="11">
@@ -195,7 +195,49 @@
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-3u-VAI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c4m-RB-tGV">
+                                    <size key="itemSize" width="125" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EntryCell" id="nvH-gc-9Ry">
+                                        <rect key="frame" x="20" y="84" width="125" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="evadress.png" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-5u-yFy">
+                                                    <rect key="frame" x="5" y="5" width="115" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="customSize" width="125" height="125"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="oUG-qW-djg"/>
+                                    <outlet property="delegate" destination="2" id="eqO-uR-CjC"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0Y5-3u-VAI" secondAttribute="bottom" id="GCT-RO-r35"/>
+                            <constraint firstItem="0Y5-3u-VAI" firstAttribute="top" secondItem="16" secondAttribute="top" id="ODq-Hf-vXY"/>
+                            <constraint firstAttribute="trailing" secondItem="0Y5-3u-VAI" secondAttribute="trailing" id="Ok0-8W-sRt"/>
+                            <constraint firstItem="0Y5-3u-VAI" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="xRo-eS-VHO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Growing Pains" id="4mC-yc-shv">
                         <barButtonItem key="rightBarButtonItem" title="Options" id="aQ9-82-maM">
@@ -205,6 +247,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="0Y5-3u-VAI" id="7gH-fU-gD4"/>
                         <segue destination="h6o-50-LJj" kind="modal" identifier="Login" id="4Bg-4t-c0G"/>
                     </connections>
                 </viewController>
@@ -306,7 +349,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Pyt-pv-plx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="h6o-50-LJj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h6o-50-LJj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DUg-ag-50y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -319,7 +362,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RW9-Wg-ETE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="-1080"/>
+            <point key="canvasLocation" x="285" y="-1600"/>
         </scene>
         <!--Side Panel Controller-->
         <scene sceneID="iN7-ur-HO0">
@@ -560,6 +603,9 @@
             <point key="canvasLocation" x="1179" y="419"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="evadress.png" width="721" height="771"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
