@@ -8,7 +8,6 @@
 
 #import "GPAddEntryViewController.h"
 #import "GPAppDelegate.h"
-#import "UIImage+ImageResizing.h"
 #import "GPEntry.h"
 
 @interface GPAddEntryViewController ()
@@ -41,7 +40,6 @@
 - (void)saveEntry
 {
   CGSize newSize = CGSizeMake(640, 640);
-//  UIImage *scaledImage = [self.image imageWithSize:CGSizeMake(640, 640) contentMode:UIViewContentModeScaleAspectFill];
   UIGraphicsBeginImageContext(newSize);
   [self.image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
   UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();

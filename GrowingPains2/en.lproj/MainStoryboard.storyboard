@@ -196,7 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-Th-jIx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-Th-jIx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -225,12 +225,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="gSL-hb-Ij8" id="8ZQ-z3-jht">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yu-gl-rJS">
-                                                    <rect key="frame" x="10" y="10" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -241,6 +235,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xh4-Th-jIx" secondAttribute="trailing" id="5E2-Zw-BUa"/>
+                            <constraint firstAttribute="bottom" secondItem="xh4-Th-jIx" secondAttribute="bottom" id="D5Z-mG-ZeB"/>
+                            <constraint firstItem="xh4-Th-jIx" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="IUP-Z8-XO1"/>
+                            <constraint firstItem="xh4-Th-jIx" firstAttribute="top" secondItem="16" secondAttribute="top" id="Zja-JD-7wQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Growing Pains" id="4mC-yc-shv">
                         <barButtonItem key="rightBarButtonItem" title="Options" id="aQ9-82-maM">

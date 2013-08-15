@@ -21,9 +21,6 @@
 		0896E5A517BC2E3E00BFD8DD /* evaplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5A117BC2E3E00BFD8DD /* evaplane.png */; };
 		0896E5A617BC2E3E00BFD8DD /* evasilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5A217BC2E3E00BFD8DD /* evasilly.png */; };
 		0896E5B317BCBDA600BFD8DD /* GPAddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B217BCBDA600BFD8DD /* GPAddEntryViewController.m */; };
-		0896E5B717BCCE8200BFD8DD /* UIImage+ImageResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */; };
-		0896E5BA17BCCEAF00BFD8DD /* UIKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */; };
-		0896E5BD17BCCEC400BFD8DD /* CoreGraphicsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */; };
 		0896E5C717BD42F800BFD8DD /* GPEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5C617BD42F800BFD8DD /* GPEntry.m */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
@@ -79,12 +76,6 @@
 		0896E5A217BC2E3E00BFD8DD /* evasilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evasilly.png; sourceTree = "<group>"; };
 		0896E5B117BCBDA600BFD8DD /* GPAddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPAddEntryViewController.h; sourceTree = "<group>"; };
 		0896E5B217BCBDA600BFD8DD /* GPAddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPAddEntryViewController.m; sourceTree = "<group>"; };
-		0896E5B517BCCE8200BFD8DD /* UIImage+ImageResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageResizing.h"; sourceTree = "<group>"; };
-		0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageResizing.m"; sourceTree = "<group>"; };
-		0896E5B817BCCEAF00BFD8DD /* UIKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitAdditions.h; sourceTree = "<group>"; };
-		0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitAdditions.m; sourceTree = "<group>"; };
-		0896E5BB17BCCEC400BFD8DD /* CoreGraphicsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsAdditions.h; sourceTree = "<group>"; };
-		0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsAdditions.m; sourceTree = "<group>"; };
 		0896E5C517BD42F800BFD8DD /* GPEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEntry.h; sourceTree = "<group>"; };
 		0896E5C617BD42F800BFD8DD /* GPEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEntry.m; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,22 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				0896E5C317BCDC3C00BFD8DD /* JASidePanel */,
-				0896E5C217BCDC2D00BFD8DD /* Image Additions */,
 			);
 			name = "External Source";
-			sourceTree = "<group>";
-		};
-		0896E5C217BCDC2D00BFD8DD /* Image Additions */ = {
-			isa = PBXGroup;
-			children = (
-				0896E5BB17BCCEC400BFD8DD /* CoreGraphicsAdditions.h */,
-				0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */,
-				0896E5B817BCCEAF00BFD8DD /* UIKitAdditions.h */,
-				0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */,
-				0896E5B517BCCE8200BFD8DD /* UIImage+ImageResizing.h */,
-				0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */,
-			);
-			name = "Image Additions";
 			sourceTree = "<group>";
 		};
 		0896E5C317BCDC3C00BFD8DD /* JASidePanel */ = {
@@ -392,17 +369,14 @@
 				0896E56417BB49B700BFD8DD /* GPSidePanelController.m in Sources */,
 				0896E55617BAE62F00BFD8DD /* GPHelpers.m in Sources */,
 				08A7DBF917B977E500C3ED80 /* main.m in Sources */,
-				0896E5BA17BCCEAF00BFD8DD /* UIKitAdditions.m in Sources */,
 				08A7DBFD17B977E500C3ED80 /* GPAppDelegate.m in Sources */,
 				0896E57317BBF7ED00BFD8DD /* GPAddJournalViewController.m in Sources */,
 				08A7DC0917B977E500C3ED80 /* GPHomeViewController.m in Sources */,
-				0896E5BD17BCCEC400BFD8DD /* CoreGraphicsAdditions.m in Sources */,
 				0896E5B317BCBDA600BFD8DD /* GPAddEntryViewController.m in Sources */,
 				0896E56A17BB660200BFD8DD /* GPEditJournalViewController.m in Sources */,
 				0896E56017BB45E400BFD8DD /* UIViewController+JASidePanel.m in Sources */,
 				0896E55F17BB45E400BFD8DD /* JASidePanelController.m in Sources */,
 				0896E56D17BBF39700BFD8DD /* GPJournal.m in Sources */,
-				0896E5B717BCCE8200BFD8DD /* UIImage+ImageResizing.m in Sources */,
 				08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */,
 				0833F18917BA1FB600D55D39 /* GPSignUpViewController.m in Sources */,
 				0896E56717BB53B100BFD8DD /* GPJournalsViewController.m in Sources */,
@@ -501,6 +475,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
 				INFOPLIST_FILE = "GrowingPains2/GrowingPains2-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -517,6 +492,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
 				INFOPLIST_FILE = "GrowingPains2/GrowingPains2-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
