@@ -14,14 +14,9 @@
 #import "GPEntry.h"
 #import <Parse/Parse.h>
 
-@interface GPHomeViewController () <UIGestureRecognizerDelegate> {
-  CGFloat lastRotation;
-}
+@interface GPHomeViewController () 
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (strong, nonatomic) NSArray *images;
-@property (strong, nonatomic) UIRotationGestureRecognizer *rotationRecognizer;
-@property (strong, nonatomic) UIPinchGestureRecognizer *pinchRecognizer;
 @property (strong, nonatomic) UIImageView *selectedImageView;
 @property (strong, nonatomic) UIImage *capturedImage;
 @property (strong, nonatomic) NSArray *entries;
@@ -33,7 +28,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.images = @[ @"evaplane.png", @"evasilly.png", @"evafish.png", @"evadress.png"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -56,7 +50,6 @@
   if (!currentUser)
     [self performSegueWithIdentifier:@"Login" sender:self];
   
-  [self setupGestureRecognizers];
 //  self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 //  NSTimer* timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gravityIt) userInfo:nil repeats:YES];
 //  [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
@@ -67,18 +60,6 @@
   [super viewDidDisappear:animated];
   
   self.animator = nil;
-}
-
-- (void)setupGestureRecognizers
-{
-  self.rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
-  [self.view addGestureRecognizer:self.rotationRecognizer];
-  
-  self.pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchRecognizerFired:)];
-  [self.view addGestureRecognizer:self.pinchRecognizer];
-  
-  self.rotationRecognizer.delegate = self;
-  self.pinchRecognizer.delegate = self;
 }
 
 - (void)gravityIt
@@ -151,81 +132,6 @@
   [imageView loadInBackground];
   
   return cell;
-}
-
-#pragma mark - GestureRecognizerDelegate
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-  return (gestureRecognizer == self.rotationRecognizer && otherGestureRecognizer == self.pinchRecognizer)
-        || (gestureRecognizer == self.pinchRecognizer && otherGestureRecognizer == self.rotationRecognizer);
-}
-
-#pragma mark - Other GesturesRecognizer Methods
-
-- (void)rotationRecognizerFired:(UIRotationGestureRecognizer *)recognizer
-{
-  NSString *text = [NSString stringWithFormat:@"Rotated! (r: %0.2f, v: %0.2f)", recognizer.rotation, recognizer.velocity];
-  NSLog(@"%@", text);
-  
-  if([recognizer state] == UIGestureRecognizerStateEnded)
-  {
-    lastRotation = 0.0;
-    return;
-  }
-  
-  CGFloat rotation = 0.0 - (lastRotation - [recognizer rotation]);
-  
-  CGAffineTransform currentTransform = self.selectedImageView .transform;
-  CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform,rotation);
-  
-  [self.selectedImageView setTransform:newTransform];
-  
-  lastRotation = [recognizer rotation];
-}
-
-- (void)pinchRecognizerFired:(UIPinchGestureRecognizer *)recognizer
-{
-  NSString *text = [NSString stringWithFormat:@"Pinched! (s: %0.2f, v: %0.2f)",
-                    recognizer.scale, recognizer.velocity];
-  NSLog(@"%@", text);
-  
-  static CGRect initialBounds;
-  static CGFloat initialScale;
-  
-  if (recognizer.state == UIGestureRecognizerStateBegan)
-  {
-    CGPoint point = [recognizer locationInView:self.tableView];
-    NSLog(@"point is %@", NSStringFromCGPoint(point));
-    
-    self.selectedImageView = [self imageViewClosestToPoint:point];
-    initialBounds = self.selectedImageView.bounds;
-    initialScale = [recognizer scale];
-  }
-  CGFloat scale = [recognizer scale];
-  
-  // Set back to initial scale when the user lets go
-  if (recognizer.state == UIGestureRecognizerStateEnded)
-  {
-    scale = initialScale;
-  }
-  
-  CGAffineTransform zt = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
-  self.selectedImageView.bounds = CGRectApplyAffineTransform(initialBounds, zt);
-}
-
-- (UIImageView *)imageViewClosestToPoint:(CGPoint)point
-{
-  for (UITableViewCell *cell in [self.tableView visibleCells])
-  {
-    if (CGRectContainsPoint(cell.frame, point))
-    {
-      NSLog(@"cell frame: %@", NSStringFromCGRect(cell.frame));
-      UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-      return imageView;
-    }
-  }
-  return nil;
 }
 
 #pragma mark - Actions

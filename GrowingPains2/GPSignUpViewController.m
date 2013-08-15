@@ -52,6 +52,11 @@
   [self.view endEditing:YES];
 }
 
+- (IBAction)cancelPressed:(id)sender
+{
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

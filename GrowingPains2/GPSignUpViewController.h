@@ -12,6 +12,7 @@
 
 - (IBAction)signUpPressed:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
+- (IBAction)cancelPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
