@@ -97,33 +97,43 @@
     [query whereKey:@"journal" equalTo:self.currentJournal];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
       self.entries = objects;
-      [self.tableView reloadData];
+      [self.collectionView reloadData];
     }];
   }
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
   return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+  // +1 for the add entry cell
   if (self.entries)
-    return self.entries.count;
+    return self.entries.count + 1;
   else
-    return 0;
+    return 1;
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UICollectionViewDelegate
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *cellIdentifier = @"EntryCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-  PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(10.0f, 5.0f, 110.0f, 110.0f)];
+  static NSString *addEntryCellIdentifier = @"AddEntryCell";
+  
+  if (indexPath.row == self.entries.count)
+  {
+    // Final row, setup our add button
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:addEntryCellIdentifier forIndexPath:indexPath];
+    return cell;
+  }
+  
+  UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+  PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 60.0f, 60.0f)];
   [cell addSubview:imageView];
   
   GPEntry *entry = [self.entries objectAtIndex:indexPath.row];

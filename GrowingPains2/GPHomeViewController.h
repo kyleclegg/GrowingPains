@@ -11,10 +11,9 @@
 #import "GPAddEntryViewController.h"
 #import "GPJournalsViewController.h"
 
-@interface GPHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, GPAddEntryDelegate, GPJournalSelectedDelegate>
+@interface GPHomeViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, GPAddEntryDelegate, GPJournalSelectedDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) GPJournal *currentJournal;
 
 - (IBAction)addEntryPressed:(id)sender;
