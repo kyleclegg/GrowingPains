@@ -6,10 +6,14 @@
 //  Copyright (c) 2013 Paperplate LLC. All rights reserved.
 //
 
-#import "GPTimelineViewController.h"
+#import "GPHomeViewController.h"
 #import <Parse/Parse.h>
+#import "UIViewController+JASidePanel.h"
+#import "GPAddEntryViewController.h"
+#import "GPAppDelegate.h"
+#import "GPSidePanelController.h"
 
-@interface GPTimelineViewController () <UIGestureRecognizerDelegate> {
+@interface GPHomeViewController () <UIGestureRecognizerDelegate> {
   CGFloat lastRotation;
 }
 
@@ -18,10 +22,11 @@
 @property (strong, nonatomic) UIRotationGestureRecognizer *rotationRecognizer;
 @property (strong, nonatomic) UIPinchGestureRecognizer *pinchRecognizer;
 @property (strong, nonatomic) UIImageView *selectedImageView;
+@property (strong, nonatomic) UIImage *capturedImage;
 
 @end
 
-@implementation GPTimelineViewController
+@implementation GPHomeViewController
 
 - (void)viewDidLoad
 {
@@ -36,6 +41,16 @@
   PFUser *currentUser = [PFUser currentUser];
   if (!currentUser)
     [self performSegueWithIdentifier:@"Login" sender:self];
+  
+  if ([GPAppDelegate appDelegate].currentJournal != nil)
+  {
+    // Find all posts by the current user
+    PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
+    [query whereKey:@"journal" equalTo:[GPAppDelegate appDelegate].currentJournal];
+    NSArray *entries = [query findObjects];
+    NSLog(@"found these entries %@", entries);
+  }
+
   
   [self setupGestureRecognizers];
 //  self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
@@ -54,11 +69,9 @@
 {
   self.rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
   [self.view addGestureRecognizer:self.rotationRecognizer];
-  [self.rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
   
   self.pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchRecognizerFired:)];
   [self.view addGestureRecognizer:self.pinchRecognizer];
-  [self.pinchRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
   
   self.rotationRecognizer.delegate = self;
   self.pinchRecognizer.delegate = self;
@@ -110,7 +123,7 @@
         || (gestureRecognizer == self.pinchRecognizer && otherGestureRecognizer == self.rotationRecognizer);
 }
 
-#pragma mark - Gestures Fired
+#pragma mark - Other GesturesRecognizer Methods
 
 - (void)rotationRecognizerFired:(UIRotationGestureRecognizer *)recognizer
 {
@@ -153,7 +166,7 @@
   }
   CGFloat scale = [recognizer scale];
   
-  // If let go, set back to initial scale
+  // Set back to initial scale when the user lets go
   if (recognizer.state == UIGestureRecognizerStateEnded)
   {
     scale = initialScale;
@@ -161,16 +174,6 @@
   
   CGAffineTransform zt = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
   self.selectedImageView.bounds = CGRectApplyAffineTransform(initialBounds, zt);
-}
-
-#pragma mark - Gesture Recognizer State Monitoring
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(UIGestureRecognizer *)recognizer
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-  NSLog(@"Gesture recognizer changed");
 }
 
 - (UIImageView *)imageViewClosestToPoint:(CGPoint)point
@@ -188,5 +191,73 @@
   return nil;
 }
 
+#pragma mark - Actions
+
+- (IBAction)addEntryPressed:(id)sender
+{
+  if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+  {
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                          message:@"Device has no camera"
+                                                         delegate:nil
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles: nil];
+    [myAlertView show];
+  }
+  else if ([GPAppDelegate appDelegate].currentJournal == nil)
+  {
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                          message:@"Create your first journal to begin"
+                                                         delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles: nil];
+    [myAlertView show];
+  }
+  else
+  {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+  }
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  [self.sidePanelController showLeftPanelAnimated:YES];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+  self.capturedImage = info[UIImagePickerControllerEditedImage];
+  
+  [picker dismissViewControllerAnimated:YES completion:^{
+    [self performSegueWithIdentifier:@"AddEntry" sender:self];
+  }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+  [picker dismissViewControllerAnimated:YES completion:nil];
+  
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([[segue identifier] isEqualToString:@"AddEntry"])
+  {
+    GPAddEntryViewController *controller = [segue destinationViewController];
+    controller.image = self.capturedImage;
+    controller.currentJournal = [GPAppDelegate appDelegate].currentJournal;
+  }
+}
 
 @end

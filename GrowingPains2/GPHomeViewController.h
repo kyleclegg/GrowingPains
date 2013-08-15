@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GPJournal.h"
 
-@interface GPTimelineViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GPHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)addEntryPressed:(id)sender;
 
 @end

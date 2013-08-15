@@ -13,6 +13,11 @@
 
 @implementation GPAppDelegate
 
++ (GPAppDelegate *)appDelegate
+{
+  return (GPAppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [GPJournal registerSubclass];

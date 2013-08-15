@@ -20,6 +20,11 @@
 		0896E5A417BC2E3E00BFD8DD /* evafish.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5A017BC2E3E00BFD8DD /* evafish.png */; };
 		0896E5A517BC2E3E00BFD8DD /* evaplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5A117BC2E3E00BFD8DD /* evaplane.png */; };
 		0896E5A617BC2E3E00BFD8DD /* evasilly.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5A217BC2E3E00BFD8DD /* evasilly.png */; };
+		0896E5B317BCBDA600BFD8DD /* GPAddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B217BCBDA600BFD8DD /* GPAddEntryViewController.m */; };
+		0896E5B717BCCE8200BFD8DD /* UIImage+ImageResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */; };
+		0896E5BA17BCCEAF00BFD8DD /* UIKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */; };
+		0896E5BD17BCCEC400BFD8DD /* CoreGraphicsAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */; };
+		0896E5C117BCD53800BFD8DD /* DAProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896E5C017BCD53800BFD8DD /* DAProgressOverlayView.m */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */; };
@@ -30,7 +35,7 @@
 		08A7DC0117B977E500C3ED80 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC0017B977E500C3ED80 /* Default@2x.png */; };
 		08A7DC0317B977E500C3ED80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC0217B977E500C3ED80 /* Default-568h@2x.png */; };
 		08A7DC0617B977E500C3ED80 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC0417B977E500C3ED80 /* MainStoryboard.storyboard */; };
-		08A7DC0917B977E500C3ED80 /* GPTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC0817B977E500C3ED80 /* GPTimelineViewController.m */; };
+		08A7DC0917B977E500C3ED80 /* GPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC0817B977E500C3ED80 /* GPHomeViewController.m */; };
 		08A7DC0B17B977E500C3ED80 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC0A17B977E500C3ED80 /* first.png */; };
 		08A7DC0D17B977E500C3ED80 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC0C17B977E500C3ED80 /* first@2x.png */; };
 		08A7DC1217B977E500C3ED80 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A7DC1117B977E500C3ED80 /* second.png */; };
@@ -72,6 +77,16 @@
 		0896E5A017BC2E3E00BFD8DD /* evafish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evafish.png; sourceTree = "<group>"; };
 		0896E5A117BC2E3E00BFD8DD /* evaplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evaplane.png; sourceTree = "<group>"; };
 		0896E5A217BC2E3E00BFD8DD /* evasilly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evasilly.png; sourceTree = "<group>"; };
+		0896E5B117BCBDA600BFD8DD /* GPAddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPAddEntryViewController.h; sourceTree = "<group>"; };
+		0896E5B217BCBDA600BFD8DD /* GPAddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPAddEntryViewController.m; sourceTree = "<group>"; };
+		0896E5B517BCCE8200BFD8DD /* UIImage+ImageResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageResizing.h"; sourceTree = "<group>"; };
+		0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageResizing.m"; sourceTree = "<group>"; };
+		0896E5B817BCCEAF00BFD8DD /* UIKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitAdditions.h; sourceTree = "<group>"; };
+		0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitAdditions.m; sourceTree = "<group>"; };
+		0896E5BB17BCCEC400BFD8DD /* CoreGraphicsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsAdditions.h; sourceTree = "<group>"; };
+		0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsAdditions.m; sourceTree = "<group>"; };
+		0896E5BF17BCD53800BFD8DD /* DAProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAProgressOverlayView.h; sourceTree = "<group>"; };
+		0896E5C017BCD53800BFD8DD /* DAProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAProgressOverlayView.m; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,8 +101,8 @@
 		08A7DC0017B977E500C3ED80 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		08A7DC0217B977E500C3ED80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		08A7DC0517B977E500C3ED80 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		08A7DC0717B977E500C3ED80 /* GPTimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTimelineViewController.h; sourceTree = "<group>"; };
-		08A7DC0817B977E500C3ED80 /* GPTimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTimelineViewController.m; sourceTree = "<group>"; };
+		08A7DC0717B977E500C3ED80 /* GPHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPHomeViewController.h; sourceTree = "<group>"; };
+		08A7DC0817B977E500C3ED80 /* GPHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPHomeViewController.m; sourceTree = "<group>"; };
 		08A7DC0A17B977E500C3ED80 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		08A7DC0C17B977E500C3ED80 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		08A7DC1117B977E500C3ED80 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -143,12 +158,44 @@
 		0896E55A17BB45D500BFD8DD /* External Source */ = {
 			isa = PBXGroup;
 			children = (
+				0896E5C317BCDC3C00BFD8DD /* JASidePanel */,
+				0896E5C217BCDC2D00BFD8DD /* Image Additions */,
+				0896E5BE17BCD53800BFD8DD /* DAProgressOverlayView */,
+			);
+			name = "External Source";
+			sourceTree = "<group>";
+		};
+		0896E5BE17BCD53800BFD8DD /* DAProgressOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				0896E5BF17BCD53800BFD8DD /* DAProgressOverlayView.h */,
+				0896E5C017BCD53800BFD8DD /* DAProgressOverlayView.m */,
+			);
+			path = DAProgressOverlayView;
+			sourceTree = "<group>";
+		};
+		0896E5C217BCDC2D00BFD8DD /* Image Additions */ = {
+			isa = PBXGroup;
+			children = (
+				0896E5BB17BCCEC400BFD8DD /* CoreGraphicsAdditions.h */,
+				0896E5BC17BCCEC400BFD8DD /* CoreGraphicsAdditions.m */,
+				0896E5B817BCCEAF00BFD8DD /* UIKitAdditions.h */,
+				0896E5B917BCCEAF00BFD8DD /* UIKitAdditions.m */,
+				0896E5B517BCCE8200BFD8DD /* UIImage+ImageResizing.h */,
+				0896E5B617BCCE8200BFD8DD /* UIImage+ImageResizing.m */,
+			);
+			name = "Image Additions";
+			sourceTree = "<group>";
+		};
+		0896E5C317BCDC3C00BFD8DD /* JASidePanel */ = {
+			isa = PBXGroup;
+			children = (
 				0896E55B17BB45E400BFD8DD /* JASidePanelController.h */,
 				0896E55C17BB45E400BFD8DD /* JASidePanelController.m */,
 				0896E55D17BB45E400BFD8DD /* UIViewController+JASidePanel.h */,
 				0896E55E17BB45E400BFD8DD /* UIViewController+JASidePanel.m */,
 			);
-			name = "External Source";
+			name = JASidePanel;
 			sourceTree = "<group>";
 		};
 		08A7DBE017B977E500C3ED80 = {
@@ -246,14 +293,16 @@
 				08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */,
 				0833F18717BA1FB600D55D39 /* GPSignUpViewController.h */,
 				0833F18817BA1FB600D55D39 /* GPSignUpViewController.m */,
-				08A7DC0717B977E500C3ED80 /* GPTimelineViewController.h */,
-				08A7DC0817B977E500C3ED80 /* GPTimelineViewController.m */,
+				08A7DC0717B977E500C3ED80 /* GPHomeViewController.h */,
+				08A7DC0817B977E500C3ED80 /* GPHomeViewController.m */,
 				0896E56517BB53B100BFD8DD /* GPJournalsViewController.h */,
 				0896E56617BB53B100BFD8DD /* GPJournalsViewController.m */,
 				0896E57117BBF7ED00BFD8DD /* GPAddJournalViewController.h */,
 				0896E57217BBF7ED00BFD8DD /* GPAddJournalViewController.m */,
 				0896E56817BB660200BFD8DD /* GPEditJournalViewController.h */,
 				0896E56917BB660200BFD8DD /* GPEditJournalViewController.m */,
+				0896E5B117BCBDA600BFD8DD /* GPAddEntryViewController.h */,
+				0896E5B217BCBDA600BFD8DD /* GPAddEntryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -351,13 +400,18 @@
 				0896E56417BB49B700BFD8DD /* GPSidePanelController.m in Sources */,
 				0896E55617BAE62F00BFD8DD /* GPHelpers.m in Sources */,
 				08A7DBF917B977E500C3ED80 /* main.m in Sources */,
+				0896E5BA17BCCEAF00BFD8DD /* UIKitAdditions.m in Sources */,
 				08A7DBFD17B977E500C3ED80 /* GPAppDelegate.m in Sources */,
 				0896E57317BBF7ED00BFD8DD /* GPAddJournalViewController.m in Sources */,
-				08A7DC0917B977E500C3ED80 /* GPTimelineViewController.m in Sources */,
+				08A7DC0917B977E500C3ED80 /* GPHomeViewController.m in Sources */,
+				0896E5C117BCD53800BFD8DD /* DAProgressOverlayView.m in Sources */,
+				0896E5BD17BCCEC400BFD8DD /* CoreGraphicsAdditions.m in Sources */,
+				0896E5B317BCBDA600BFD8DD /* GPAddEntryViewController.m in Sources */,
 				0896E56A17BB660200BFD8DD /* GPEditJournalViewController.m in Sources */,
 				0896E56017BB45E400BFD8DD /* UIViewController+JASidePanel.m in Sources */,
 				0896E55F17BB45E400BFD8DD /* JASidePanelController.m in Sources */,
 				0896E56D17BBF39700BFD8DD /* GPJournal.m in Sources */,
+				0896E5B717BCCE8200BFD8DD /* UIImage+ImageResizing.m in Sources */,
 				08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */,
 				0833F18917BA1FB600D55D39 /* GPSignUpViewController.m in Sources */,
 				0896E56717BB53B100BFD8DD /* GPJournalsViewController.m in Sources */,

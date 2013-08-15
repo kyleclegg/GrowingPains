@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="1172" y="-1600"/>
         </scene>
-        <!--Timeline View Controller - First-->
+        <!--Home View Controller - Home-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" id="2" customClass="GPTimelineViewController" sceneMemberID="viewController">
+                <viewController title="Home" id="2" customClass="GPHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uMO-Jg-mIC"/>
                         <viewControllerLayoutGuide type="bottom" id="geZ-aq-ri1"/>
@@ -200,9 +200,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="rM7-KS-49K" userLabel="Header View">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C18-OZ-VCy">
+                                            <rect key="frame" x="66" y="7" width="189" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="+ Add Entry">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addEntryPressed:" destination="2" eventType="touchUpInside" id="guP-Fq-Ebi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="120" id="gSL-hb-Ij8">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="120"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="gSL-hb-Ij8" id="8ZQ-z3-jht">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
@@ -234,11 +252,74 @@
                     <connections>
                         <outlet property="tableView" destination="xh4-Th-jIx" id="PNt-7k-f6t"/>
                         <segue destination="h6o-50-LJj" kind="modal" identifier="Login" id="4Bg-4t-c0G"/>
+                        <segue destination="whB-qK-ODP" kind="push" identifier="AddEntry" id="DrC-SN-8HA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="228" y="-348"/>
+        </scene>
+        <!--Add Entry View Controller - Add Entry-->
+        <scene sceneID="vfs-5v-ePD">
+            <objects>
+                <viewController id="whB-qK-ODP" customClass="GPAddEntryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sec-pK-nZy"/>
+                        <viewControllerLayoutGuide type="bottom" id="tYd-ps-7GL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KWw-1U-kLh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ta2-tn-Vl4">
+                                <rect key="frame" x="20" y="84" width="280" height="280"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your awesome caption" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2J1-Qt-sAm">
+                                <rect key="frame" x="20" y="372" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="whB-qK-ODP" id="QrT-pa-IIX"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vm-3Z-0DU">
+                                <rect key="frame" x="20" y="410" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="whB-qK-ODP" eventType="touchUpInside" id="VyF-5X-kyQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XI0-ff-hjE" appends="YES" id="Qk7-5K-tjg"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Entry" id="PZg-E2-w5h">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="R75-vV-uBa"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextField" destination="2J1-Qt-sAm" id="uOh-zc-0ep"/>
+                        <outlet property="imageView" destination="ta2-tn-Vl4" id="zD0-Q3-mTe"/>
+                        <outlet property="saveButton" destination="6vm-3Z-0DU" id="65X-fV-T20"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3c-PH-GUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XI0-ff-hjE">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="whB-qK-ODP" id="8cF-p0-4TU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="738" y="-348"/>
         </scene>
         <!--Edit Journal View Controller - Edit Journal-->
         <scene sceneID="9Eo-IZ-EXr">
@@ -329,7 +410,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="728" y="-348"/>
+            <point key="canvasLocation" x="1166" y="-933"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pyt-pv-plx">
