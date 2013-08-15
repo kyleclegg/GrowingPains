@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPTimelineViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface GPTimelineViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

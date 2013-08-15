@@ -9,12 +9,16 @@
 #import "GPTimelineViewController.h"
 #import <Parse/Parse.h>
 
-@interface GPTimelineViewController () <UIGestureRecognizerDelegate>
+@interface GPTimelineViewController () <UIGestureRecognizerDelegate> {
+  CGFloat lastRotation;
+  CGFloat lastScale;
+}
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @property (strong, nonatomic) NSArray *images;
-@property (nonatomic, strong) UIRotationGestureRecognizer *rotationRecognizer;
-@property (nonatomic, strong) UIPinchGestureRecognizer *pinchRecognizer;
+@property (strong, nonatomic) UIRotationGestureRecognizer *rotationRecognizer;
+@property (strong, nonatomic) UIPinchGestureRecognizer *pinchRecognizer;
+@property (strong, nonatomic) UIImageView *selectedImageView;
 
 @end
 
@@ -72,22 +76,24 @@
   [self.animator addBehavior:gravityBehavior];
 }
 
-#pragma mark - UICollectionView
+#pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
   return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   return self.images.count * 4;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - UITableViewDelegate
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *cellIdentifier = @"EntryCell";
-  UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
   UIImageView *iv = (UIImageView *)[cell viewWithTag:100];
   if (indexPath.row < 4)
     iv.image = [UIImage imageNamed:[self.images objectAtIndex:indexPath.row]];
@@ -99,8 +105,7 @@
 
 #pragma mark - GestureRecognizerDelegate
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
   return (gestureRecognizer == self.rotationRecognizer && otherGestureRecognizer == self.pinchRecognizer)
         || (gestureRecognizer == self.pinchRecognizer && otherGestureRecognizer == self.rotationRecognizer);
@@ -110,9 +115,23 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 - (void)rotationRecognizerFired:(UIRotationGestureRecognizer *)recognizer
 {
-  NSString *text = [NSString stringWithFormat:@"Rotated! (r: %0.2f, v: %0.2f)",
-                    recognizer.rotation, recognizer.velocity];
+  NSString *text = [NSString stringWithFormat:@"Rotated! (r: %0.2f, v: %0.2f)", recognizer.rotation, recognizer.velocity];
   NSLog(@"%@", text);
+  
+  if([recognizer state] == UIGestureRecognizerStateEnded)
+  {
+    lastRotation = 0.0;
+    return;
+  }
+  
+  CGFloat rotation = 0.0 - (lastRotation - [recognizer rotation]);
+  
+  CGAffineTransform currentTransform = self.selectedImageView .transform;
+  CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform,rotation);
+  
+  [self.selectedImageView setTransform:newTransform];
+  
+  lastRotation = [recognizer rotation];
 }
 
 - (void)pinchRecognizerFired:(UIPinchGestureRecognizer *)recognizer
@@ -121,8 +140,20 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
                     recognizer.scale, recognizer.velocity];
   NSLog(@"%@", text);
   
-  CGPoint point = [recognizer locationInView:self.view];
-  NSLog(@"the point is %@", NSStringFromCGPoint(point));
+  static CGRect initialBounds;
+  
+  if (recognizer.state == UIGestureRecognizerStateBegan)
+  {
+    CGPoint point = [recognizer locationInView:self.tableView];
+    NSLog(@"point is %@", NSStringFromCGPoint(point));
+    
+    self.selectedImageView = [self imageViewClosestToPoint:point];
+    initialBounds = self.selectedImageView.bounds;
+  }
+  CGFloat scale = [recognizer scale];
+  
+  CGAffineTransform zt = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
+  self.selectedImageView.bounds = CGRectApplyAffineTransform(initialBounds, zt);
 }
 
 #pragma mark - Gesture Recognizer State Monitoring
@@ -133,6 +164,21 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
                        context:(void *)context
 {
   NSLog(@"Gesture recognizer changed");
+}
+
+- (UIImageView *)imageViewClosestToPoint:(CGPoint)point
+{
+  for (UITableViewCell *cell in [self.tableView visibleCells])
+  {
+    if (CGRectContainsPoint(cell.frame, point))
+    {
+      NSLog(@"cell frame: %@", NSStringFromCGRect(cell.frame));
+      UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
+      return imageView;
+    }
+  }
+  
+  return nil;
 }
 
 

@@ -196,48 +196,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-3u-VAI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-Th-jIx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c4m-RB-tGV">
-                                    <size key="itemSize" width="125" height="125"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EntryCell" id="nvH-gc-9Ry">
-                                        <rect key="frame" x="20" y="84" width="125" height="125"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="120" id="gSL-hb-Ij8">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="gSL-hb-Ij8" id="8ZQ-z3-jht">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="evadress.png" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-5u-yFy">
-                                                    <rect key="frame" x="5" y="5" width="115" height="115"/>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yu-gl-rJS">
+                                                    <rect key="frame" x="10" y="10" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="customSize" width="125" height="125"/>
-                                    </collectionViewCell>
-                                </cells>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="2" id="oUG-qW-djg"/>
-                                    <outlet property="delegate" destination="2" id="eqO-uR-CjC"/>
+                                    <outlet property="dataSource" destination="2" id="F6D-Qq-Ikk"/>
+                                    <outlet property="delegate" destination="2" id="nd6-6W-2bA"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="0Y5-3u-VAI" secondAttribute="bottom" id="GCT-RO-r35"/>
-                            <constraint firstItem="0Y5-3u-VAI" firstAttribute="top" secondItem="16" secondAttribute="top" id="ODq-Hf-vXY"/>
-                            <constraint firstAttribute="trailing" secondItem="0Y5-3u-VAI" secondAttribute="trailing" id="Ok0-8W-sRt"/>
-                            <constraint firstItem="0Y5-3u-VAI" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="xRo-eS-VHO"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Growing Pains" id="4mC-yc-shv">
                         <barButtonItem key="rightBarButtonItem" title="Options" id="aQ9-82-maM">
@@ -247,7 +232,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="0Y5-3u-VAI" id="7gH-fU-gD4"/>
+                        <outlet property="tableView" destination="xh4-Th-jIx" id="PNt-7k-f6t"/>
                         <segue destination="h6o-50-LJj" kind="modal" identifier="Login" id="4Bg-4t-c0G"/>
                     </connections>
                 </viewController>
@@ -603,9 +588,6 @@
             <point key="canvasLocation" x="1179" y="419"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="evadress.png" width="721" height="771"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
