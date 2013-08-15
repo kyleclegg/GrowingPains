@@ -11,7 +11,6 @@
 
 @interface GPTimelineViewController () <UIGestureRecognizerDelegate> {
   CGFloat lastRotation;
-  CGFloat lastScale;
 }
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
@@ -141,6 +140,7 @@
   NSLog(@"%@", text);
   
   static CGRect initialBounds;
+  static CGFloat initialScale;
   
   if (recognizer.state == UIGestureRecognizerStateBegan)
   {
@@ -149,8 +149,15 @@
     
     self.selectedImageView = [self imageViewClosestToPoint:point];
     initialBounds = self.selectedImageView.bounds;
+    initialScale = [recognizer scale];
   }
   CGFloat scale = [recognizer scale];
+  
+  // If let go, set back to initial scale
+  if (recognizer.state == UIGestureRecognizerStateEnded)
+  {
+    scale = initialScale;
+  }
   
   CGAffineTransform zt = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
   self.selectedImageView.bounds = CGRectApplyAffineTransform(initialBounds, zt);
