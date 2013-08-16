@@ -13,6 +13,7 @@
 #import "GPSidePanelController.h"
 #import "GPEntry.h"
 #import <Parse/Parse.h>
+#import <Social/Social.h>
 
 #define kGPCenteredImageX 160
 #define kGPCenteredImageY 304
@@ -175,12 +176,17 @@
   GPEntry *entry = [self.entries objectAtIndex:indexPath.item];
   [self updateCaptionWithText:entry.caption];
   
+  
+  
   // Animate the image size increase
   [UIView animateWithDuration:0.5 animations:^{
     newImageView.frame = CGRectMake(snapPoint.x, snapPoint.y, 240, 240);
+  } completion:^(BOOL finished) {
+    [self showSocialButtons];
   }];
   
-  // Clear the previous image view
+  // Clear the social buttons and previous image view
+  [self hideSocialButtons];
   [self.previouslyDraggedImageView removeFromSuperview];
   self.previouslyDraggedImageView = newImageView;
 }
@@ -193,6 +199,28 @@
                      self.captionLabel.text = text;
                      self.captionLabel.alpha = 1.0f;
                    }];
+}
+
+- (void)showSocialButtons
+{
+  [self.view bringSubviewToFront:self.facebookShareView];
+  [self.view bringSubviewToFront:self.twitterShareView];
+  
+  self.twitterShareView.hidden = NO;
+  self.facebookShareView.hidden = NO;
+  [UIView animateWithDuration:0.3
+                   animations:^{
+                     self.twitterShareView.alpha = 1.0;
+                     self.facebookShareView.alpha = 1.0f;
+                   }];
+}
+
+- (void)hideSocialButtons
+{
+   self.twitterShareView.alpha = 0.0;
+   self.facebookShareView.alpha = 0.0f;
+   self.twitterShareView.hidden = YES;
+   self.facebookShareView.hidden = YES;
 }
 
 #pragma mark - Gesture Handling
@@ -326,6 +354,28 @@
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:nil];
+  }
+}
+
+- (IBAction)twitterSharePressed:(id)sender
+{
+  if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+  {
+    SLComposeViewController *tweetSheet = [SLComposeViewController
+                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText:@"Bomb.com"];
+    [self presentViewController:tweetSheet animated:YES completion:nil];
+  }
+}
+
+- (IBAction)facebookSharePressed:(id)sender
+{
+  if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+  {
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [controller setInitialText:@"First post from my iPhone app"];
+    [self presentViewController:controller animated:YES completion:Nil];
   }
 }
 

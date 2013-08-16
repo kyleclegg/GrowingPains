@@ -102,6 +102,7 @@
     {
       // Update current journal
       [GPAppDelegate appDelegate].homeController.currentJournal = selectedJournal;
+      [[GPAppDelegate appDelegate].homeController hideSocialButtons];
       [[GPAppDelegate appDelegate].homeController.previouslyDraggedImageView removeFromSuperview];
       [GPAppDelegate appDelegate].homeController.captionLabel.alpha = 0.0f;
     }
