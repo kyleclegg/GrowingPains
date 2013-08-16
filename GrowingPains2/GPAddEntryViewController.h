@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UITextField *captionLabel;
 
 @property (weak, nonatomic) id<GPAddEntryDelegate> delegate;
 @property (strong, nonatomic) GPJournal *currentJournal;

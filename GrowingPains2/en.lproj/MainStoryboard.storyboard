@@ -507,12 +507,19 @@
                                     <outlet property="delegate" destination="2" id="LM6-Xd-RQR"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fPy-ID-Amu">
+                                <rect key="frame" x="20" y="142" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="Growing Pains" id="4mC-yc-shv"/>
                     <connections>
+                        <outlet property="captionLabel" destination="fPy-ID-Amu" id="7G2-2h-9sM"/>
                         <outlet property="collectionView" destination="5vl-a8-Yfy" id="HVj-nH-WaU"/>
                         <segue destination="h6o-50-LJj" kind="modal" identifier="Login" id="4Bg-4t-c0G"/>
                         <segue destination="whB-qK-ODP" kind="push" identifier="AddEntry" id="DrC-SN-8HA"/>

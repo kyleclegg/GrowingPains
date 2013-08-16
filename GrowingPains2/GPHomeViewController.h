@@ -14,6 +14,7 @@
 @interface GPHomeViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, GPAddEntryDelegate, GPJournalSelectedDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
 @property (strong, nonatomic) GPJournal *currentJournal;
 @property (strong, nonatomic) UIImageView *previouslyDraggedImageView;

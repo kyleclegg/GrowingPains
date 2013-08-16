@@ -171,11 +171,28 @@
   UISnapBehavior *snapBehavior = [[UISnapBehavior alloc] initWithItem:newImageView snapToPoint:snapPoint];
   [self.animator addBehavior:snapBehavior];
   
+  // Animate the caption update
+  GPEntry *entry = [self.entries objectAtIndex:indexPath.item];
+  [self updateCaptionWithText:entry.caption];
+  
+  // Animate the image size increase
   [UIView animateWithDuration:0.5 animations:^{
     newImageView.frame = CGRectMake(snapPoint.x, snapPoint.y, 240, 240);
   }];
+  
+  // Clear the previous image view
   [self.previouslyDraggedImageView removeFromSuperview];
   self.previouslyDraggedImageView = newImageView;
+}
+
+- (void)updateCaptionWithText:(NSString *)text
+{
+  [UIView animateWithDuration:1.0
+                   animations:^{
+                     self.captionLabel.alpha = 0.0f;
+                     self.captionLabel.text = text;
+                     self.captionLabel.alpha = 1.0f;
+                   }];
 }
 
 #pragma mark - Gesture Handling
