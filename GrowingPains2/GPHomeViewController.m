@@ -14,12 +14,21 @@
 #import "GPEntry.h"
 #import <Parse/Parse.h>
 
-@interface GPHomeViewController () 
+#define kGPCenteredImageX 160
+#define kGPCenteredImageY 304
+
+@interface GPHomeViewController () // <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (strong, nonatomic) UIImageView *selectedImageView;
+//@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
+//@property (strong, nonatomic) UISnapBehavior *snapBehavior;
 @property (strong, nonatomic) UIImage *capturedImage;
 @property (strong, nonatomic) NSArray *entries;
+@property (strong, nonatomic) UIImageView *draggableImageView;
+@property (strong, nonatomic) UIImageView *previouslyDraggedImageView;
+
+//@property (strong, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
+//@property (strong, nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
 
 @end
 
@@ -28,6 +37,11 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+//  self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleAttachmentRecognizer:)];
+//  self.panGestureRecognizer.delegate = self;
+//  self.panGestureRecognizer.minimumNumberOfTouches = 1;
+//  self.panGestureRecognizer.maximumNumberOfTouches = 1;
+//  [self.view addGestureRecognizer:self.panGestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -49,10 +63,8 @@
   PFUser *currentUser = [PFUser currentUser];
   if (!currentUser)
     [self performSegueWithIdentifier:@"Login" sender:self];
-  
-//  self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-//  NSTimer* timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gravityIt) userInfo:nil repeats:YES];
-//  [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+
+//  [self setupAnimator];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -60,17 +72,6 @@
   [super viewDidDisappear:animated];
   
   self.animator = nil;
-}
-
-- (void)gravityIt
-{
-  UIView *box = [[UIView alloc] init];
-  [box setFrame:CGRectMake(100, 100, 50, 50)];
-  [box setBackgroundColor:[UIColor redColor]];
-  [self.view addSubview:box];
-  
-  UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[ box ]];
-  [self.animator addBehavior:gravityBehavior];
 }
 
 #pragma mark - Parse API Calls
@@ -134,14 +135,141 @@
   
   UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
   PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 60.0f, 60.0f)];
+  imageView.tag = 100;
   [cell addSubview:imageView];
   
   GPEntry *entry = [self.entries objectAtIndex:indexPath.row];
   imageView.file = entry.image;
   [imageView loadInBackground];
   
+//  self.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+//  self.longPressRecognizer.minimumPressDuration = 0.1;
+//  self.longPressRecognizer.delegate = self;
+//  [cell addGestureRecognizer:self.longPressRecognizer];
+  
   return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+  UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+  UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
+  UIImageView *newImageView = [[UIImageView alloc] initWithFrame:[collectionView convertRect:cell.frame toView:self.view]];
+  newImageView.image = imageView.image;
+  [self.view addSubview:newImageView];
+  
+  // Use a simple snapbehavior to move the image down
+  self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+  UISnapBehavior* snapBehavior = [[UISnapBehavior alloc] initWithItem:newImageView snapToPoint:self.view.center];
+  [self.animator addBehavior:snapBehavior];
+  
+  [UIView animateWithDuration:0.5 animations:^{
+    newImageView.frame = CGRectMake(kGPCenteredImageX - 75, kGPCenteredImageY - 75, 150, 150);
+  }];
+  [self.previouslyDraggedImageView removeFromSuperview];
+  self.previouslyDraggedImageView = newImageView;
+}
+
+#pragma mark - Gesture Handling
+
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+//shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+//{
+//  return ((gestureRecognizer == self.panGestureRecognizer && [otherGestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
+//        || (otherGestureRecognizer == self.panGestureRecognizer && [gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]));
+//}
+//
+//- (void)handleLongPress:(UILongPressGestureRecognizer *)recognizer
+//{
+//  UICollectionViewCell *cell = (UICollectionViewCell *)[recognizer view];
+//
+//  if (recognizer.state == UIGestureRecognizerStateBegan)
+//  {
+//    NSLog(@"Long Press Began");
+//    
+//    CGRect theFrame = [recognizer view].frame;
+//    self.draggableImageView = [[UIImageView alloc] initWithFrame:theFrame];
+//    self.draggableImageView.image = ((UIImageView *)[cell viewWithTag:100]).image;
+//    [self.view addSubview:self.draggableImageView];
+////    [self setupAnimator];
+//    
+//    cell.hidden = YES;
+//  }
+//  else if (recognizer.state == UIGestureRecognizerStateEnded)
+//  {
+//    NSLog(@"Long Press Ended");
+//    recognizer = nil;
+//    cell.hidden = NO;
+//    
+//    // Done - remove the old imageview and set the current one to be the new previous one
+//    [self.previouslyDraggedImageView removeFromSuperview];
+//    self.previouslyDraggedImageView = self.draggableImageView;
+//  }
+//}
+//
+//- (void)handleAttachmentRecognizer:(UIPanGestureRecognizer *)recognizer
+//{
+//  [self.attachmentBehavior setAnchorPoint:[recognizer locationInView:self.collectionView]];
+//  
+//  if (recognizer.state == UIGestureRecognizerStateBegan)
+//  {
+//    NSLog(@"Pan Began");
+//  }
+//  else if (recognizer.state == UIGestureRecognizerStateEnded)
+//  {
+//    NSLog(@"Pan Ended");
+//    
+//    if (self.draggableImageView.frame.origin.y > (self.collectionView.frame.origin.y + self.collectionView.frame.size.height))
+//    {
+//      // Snap to its place!
+//      CGPoint snapPoint = CGPointMake(kGPCenteredImageX, kGPCenteredImageY);
+//      self.snapBehavior = [[UISnapBehavior alloc] initWithItem:self.draggableImageView snapToPoint:snapPoint];
+//      [self.animator addBehavior:self.snapBehavior];
+//      
+//      NSLog(@"%@", NSStringFromCGRect(self.draggableImageView.frame));
+//      [self performSelector:@selector(growImage) withObject:nil];
+//    }
+//    else
+//    {
+//      // Go back to your home!
+//      [self.draggableImageView removeFromSuperview];
+//    }
+//  }
+//}
+//
+//- (void)growImage
+//{
+//  [UIView animateWithDuration:0.5 animations:^{
+//    CGFloat xPos = kGPCenteredImageX - 75.0;
+//    CGFloat yPos = kGPCenteredImageY - 75.0;
+//    self.draggableImageView.frame = CGRectMake(xPos, yPos, 150, 150);
+//    NSLog(@"the new frame is %@", NSStringFromCGRect(self.draggableImageView.frame));
+//    
+//  } completion:^(BOOL finished) {
+//    NSLog(@"done");
+//  }];
+//}
+//
+//#pragma mark - Dynamics
+//
+//- (void)setupAnimator
+//{
+//  if (self.draggableImageView == nil)
+//    return;
+//  
+//  UIDynamicAnimator* animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+//  UICollisionBehavior* collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.draggableImageView]];
+//  
+//  CGPoint squareCenterPoint = CGPointMake(self.draggableImageView.center.x, self.draggableImageView.center.y - 100.0);
+//  UIOffset offset = UIOffsetMake(0.0, 0.0);
+//  UIAttachmentBehavior* attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.draggableImageView offsetFromCenter:offset attachedToAnchor:squareCenterPoint];
+//  collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+//
+//  [animator addBehavior:attachmentBehavior];
+//  self.animator = animator;
+//  
+//  self.attachmentBehavior = attachmentBehavior;
+//}
 
 #pragma mark - Actions
 
@@ -219,7 +347,5 @@
   NSLog(@"time to refresh");
   [self currentJournalEntries];
 }
-
-#pragma mark - Private methods
 
 @end
