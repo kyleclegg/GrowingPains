@@ -19,12 +19,20 @@
 {
   [super viewDidLoad];
 
+  UIColor *color = [UIColor lightGrayColor];
+  self.firstNameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.firstNameTextField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+  self.lastNameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.lastNameTextField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+  self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.emailTextField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+  self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: color}];
 }
 
 #pragma mark - Actions
 
 - (IBAction)signUpPressed:(id)sender;
 {
+  if ([self.passwordTextField.text length] < 1)
+    return;
+  
   PFUser *user = [PFUser user];
   user.username = self.emailTextField.text;
   user.password = self.passwordTextField.text;
@@ -61,14 +69,19 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-  if (textField == self.firstNameTextField)
+  if (textField == self.firstNameTextField) {
     [self.lastNameTextField becomeFirstResponder];
-  else if (textField == self.lastNameTextField)
+  }
+  else if (textField == self.lastNameTextField) {
     [self.emailTextField becomeFirstResponder];
-  else if (textField == self.emailTextField)
+  }
+  else if (textField == self.emailTextField) {
     [self.passwordTextField becomeFirstResponder];
-  else
+  }
+  else {
+    [textField resignFirstResponder];
     [self performSelector:@selector(signUpPressed:) withObject:nil];
+  }
   
   return YES;
 }
