@@ -85,6 +85,13 @@
     if (!error)
     {
       [GPAppDelegate appDelegate].journalsController.journals = objects;
+      
+      // Set the first journal by default (this should come from preferences later
+      if (!self.currentJournal && objects.count > 0)
+      {
+        self.currentJournal = [objects objectAtIndex:0];
+        [self currentJournalEntries];
+      }
     }
   }];
 }

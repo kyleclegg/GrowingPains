@@ -33,6 +33,10 @@
 		0896E5F717BE2E2200BFD8DD /* AppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5F417BE2E2200BFD8DD /* AppIconRetina.png */; };
 		0896E5FC17BE304A00BFD8DD /* AppIconMedium.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5FA17BE304A00BFD8DD /* AppIconMedium.png */; };
 		0896E5FD17BE304A00BFD8DD /* AppIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5FB17BE304A00BFD8DD /* AppIconSmall.png */; };
+		0896E60217BE8B3500BFD8DD /* AddIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5FE17BE8B3500BFD8DD /* AddIcon.png */; };
+		0896E60317BE8B3500BFD8DD /* AddIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E5FF17BE8B3500BFD8DD /* AddIcon@2x.png */; };
+		0896E60417BE8B3500BFD8DD /* LogoutIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E60017BE8B3500BFD8DD /* LogoutIcon.png */; };
+		0896E60517BE8B3500BFD8DD /* LogoutIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0896E60117BE8B3500BFD8DD /* LogoutIcon@2x.png */; };
 		08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEC17B977E500C3ED80 /* UIKit.framework */; };
 		08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBEE17B977E500C3ED80 /* Foundation.framework */; };
 		08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */; };
@@ -96,6 +100,10 @@
 		0896E5F417BE2E2200BFD8DD /* AppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconRetina.png; sourceTree = "<group>"; };
 		0896E5FA17BE304A00BFD8DD /* AppIconMedium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconMedium.png; sourceTree = "<group>"; };
 		0896E5FB17BE304A00BFD8DD /* AppIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconSmall.png; sourceTree = "<group>"; };
+		0896E5FE17BE8B3500BFD8DD /* AddIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddIcon.png; sourceTree = "<group>"; };
+		0896E5FF17BE8B3500BFD8DD /* AddIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AddIcon@2x.png"; sourceTree = "<group>"; };
+		0896E60017BE8B3500BFD8DD /* LogoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoutIcon.png; sourceTree = "<group>"; };
+		0896E60117BE8B3500BFD8DD /* LogoutIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoutIcon@2x.png"; sourceTree = "<group>"; };
 		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -293,6 +301,10 @@
 		08A7DC3517B9780C00C3ED80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0896E5FE17BE8B3500BFD8DD /* AddIcon.png */,
+				0896E5FF17BE8B3500BFD8DD /* AddIcon@2x.png */,
+				0896E60017BE8B3500BFD8DD /* LogoutIcon.png */,
+				0896E60117BE8B3500BFD8DD /* LogoutIcon@2x.png */,
 				0896E5FA17BE304A00BFD8DD /* AppIconMedium.png */,
 				0896E5FB17BE304A00BFD8DD /* AppIconSmall.png */,
 				0896E5F417BE2E2200BFD8DD /* AppIconRetina.png */,
@@ -373,8 +385,10 @@
 				08A7DC0117B977E500C3ED80 /* Default@2x.png in Resources */,
 				0896E5EB17BE2CCD00BFD8DD /* JournalsIcon@2x.png in Resources */,
 				0896E5DF17BE14A900BFD8DD /* UsernameIcon.png in Resources */,
+				0896E60517BE8B3500BFD8DD /* LogoutIcon@2x.png in Resources */,
 				0896E5DE17BE14A900BFD8DD /* TwitterIcon@2x.png in Resources */,
 				0896E5FC17BE304A00BFD8DD /* AppIconMedium.png in Resources */,
+				0896E60317BE8B3500BFD8DD /* AddIcon@2x.png in Resources */,
 				0896E5CE17BD766D00BFD8DD /* LoginBackground@2x.jpg in Resources */,
 				08A7DC0317B977E500C3ED80 /* Default-568h@2x.png in Resources */,
 				0896E5F717BE2E2200BFD8DD /* AppIconRetina.png in Resources */,
@@ -382,8 +396,10 @@
 				0896E5D817BE14A900BFD8DD /* FacebookIcon.png in Resources */,
 				0896E5DA17BE14A900BFD8DD /* PasswordIcon.png in Resources */,
 				0896E5DB17BE14A900BFD8DD /* PasswordIcon@2x.png in Resources */,
+				0896E60217BE8B3500BFD8DD /* AddIcon.png in Resources */,
 				0896E5D917BE14A900BFD8DD /* FacebookIcon@2x.png in Resources */,
 				08A7DC0617B977E500C3ED80 /* MainStoryboard.storyboard in Resources */,
+				0896E60417BE8B3500BFD8DD /* LogoutIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "GPSidePanelController.h"
+#import "GPHelpers.h"
 
 @interface GPSidePanelController ()
 
@@ -18,6 +19,7 @@
 {
   [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
   [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+  [self.view setBackgroundColor:[GPHelpers gpBrown]];
 }
 
 

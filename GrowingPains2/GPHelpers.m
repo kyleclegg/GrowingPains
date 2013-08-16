@@ -15,4 +15,10 @@
   return [UIColor colorWithRed:67.0/255.0 green:147/255.0 blue:117.0/255.0 alpha:1.0];
 }
 
++ (UIColor *)gpBrown
+{
+  return [UIColor colorWithRed:55.0/255.0 green:49/255.0 blue:47.0/255.0 alpha:1.0];
+}
+
+
 @end

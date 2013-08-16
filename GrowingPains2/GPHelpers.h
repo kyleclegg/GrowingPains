@@ -11,5 +11,6 @@
 @interface GPHelpers : NSObject
 
 + (UIColor *)gpGreen;
++ (UIColor *)gpBrown;
 
 @end

@@ -82,7 +82,8 @@
   if (indexPath.row < self.journals.count)
   {
     GPJournal *journal = [self.journals objectAtIndex:indexPath.row];
-    cell.textLabel.text = journal.name;
+    UILabel *label = (UILabel *)[cell viewWithTag:100];
+    label.text = journal.name;
   }
   
   // Configure the cell...
