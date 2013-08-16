@@ -86,8 +86,6 @@
     label.text = journal.name;
   }
   
-  // Configure the cell...
-  
   return cell;
 }
 
@@ -98,10 +96,19 @@
   // Check for a valid index
   if (indexPath.row < self.journals.count)
   {
-    // Update current journal and return to home view controller
-    [GPAppDelegate appDelegate].homeController.currentJournal = [self.journals objectAtIndex:indexPath.row];
+    GPJournal *selectedJournal = [self.journals objectAtIndex:indexPath.row];
+    
+    if ([GPAppDelegate appDelegate].homeController.currentJournal != selectedJournal)
+    {
+      // Update current journal
+      [GPAppDelegate appDelegate].homeController.currentJournal = selectedJournal;
+      [[GPAppDelegate appDelegate].homeController.previouslyDraggedImageView removeFromSuperview];
+    }
+    
+    // Return to home view controller
     [self.sidePanelController showCenterPanelAnimated:YES];
     
+    // Kick off a refresh
     if ([self.delegate respondsToSelector:@selector(refreshEntries)])
       [self.delegate refreshEntries];
   }

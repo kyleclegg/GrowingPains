@@ -77,9 +77,6 @@
    [NSDictionary dictionaryWithObjectsAndKeys:
     [UIColor whiteColor], NSForegroundColorAttributeName,
     [UIFont fontWithName:@"HelveticaNeue-Thin" size:22.0], NSFontAttributeName,nil]];
-
-  NSLog(@"%@",[UIFont fontNamesForFamilyName:@"Helvetica Neue"]);
-  
 }
 
 @end

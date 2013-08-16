@@ -14,7 +14,9 @@
 @interface GPHomeViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, GPAddEntryDelegate, GPJournalSelectedDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property (strong, nonatomic) GPJournal *currentJournal;
+@property (strong, nonatomic) UIImageView *previouslyDraggedImageView;
 
 - (IBAction)addEntryPressed:(id)sender;
 

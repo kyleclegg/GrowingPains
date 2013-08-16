@@ -19,6 +19,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  self.captionTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.captionTextField.placeholder attributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
 
   if (self.image != nil)
     self.imageView.image = self.image;

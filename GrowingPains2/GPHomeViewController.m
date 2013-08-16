@@ -24,8 +24,7 @@
 //@property (strong, nonatomic) UISnapBehavior *snapBehavior;
 @property (strong, nonatomic) UIImage *capturedImage;
 @property (strong, nonatomic) NSArray *entries;
-@property (strong, nonatomic) UIImageView *draggableImageView;
-@property (strong, nonatomic) UIImageView *previouslyDraggedImageView;
+//@property (strong, nonatomic) UIImageView *draggableImageView;
 
 //@property (strong, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 //@property (strong, nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
@@ -133,7 +132,7 @@
   static NSString *cellIdentifier = @"EntryCell";
   static NSString *addEntryCellIdentifier = @"AddEntryCell";
   
-  if (indexPath.row == self.entries.count)
+  if (indexPath.item == self.entries.count)
   {
     // Final row, setup our add button
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:addEntryCellIdentifier forIndexPath:indexPath];
@@ -145,7 +144,7 @@
   imageView.tag = 100;
   [cell addSubview:imageView];
   
-  GPEntry *entry = [self.entries objectAtIndex:indexPath.row];
+  GPEntry *entry = [self.entries objectAtIndex:indexPath.item];
   imageView.file = entry.image;
   [imageView loadInBackground];
   
@@ -173,7 +172,7 @@
   [self.animator addBehavior:snapBehavior];
   
   [UIView animateWithDuration:0.5 animations:^{
-    newImageView.frame = CGRectMake(snapPoint.x, snapPoint.y, 200, 200);
+    newImageView.frame = CGRectMake(snapPoint.x, snapPoint.y, 240, 240);
   }];
   [self.previouslyDraggedImageView removeFromSuperview];
   self.previouslyDraggedImageView = newImageView;
