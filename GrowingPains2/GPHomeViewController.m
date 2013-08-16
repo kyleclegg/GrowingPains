@@ -361,9 +361,9 @@
 {
   if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
   {
-    SLComposeViewController *tweetSheet = [SLComposeViewController
-                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText:@"Bomb.com"];
+    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText:[NSString stringWithFormat:@"%@ via @growingpainsapp", self.captionLabel.text]];
+    [tweetSheet addImage:self.previouslyDraggedImageView.image];
     [self presentViewController:tweetSheet animated:YES completion:nil];
   }
 }
@@ -373,8 +373,8 @@
   if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
   {
     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    
-    [controller setInitialText:@"First post from my iPhone app"];
+    [controller setInitialText:self.captionLabel.text];
+    [controller addImage:self.previouslyDraggedImageView.image];
     [self presentViewController:controller animated:YES completion:Nil];
   }
 }
