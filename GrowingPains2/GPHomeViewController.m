@@ -160,11 +160,13 @@
   
   // Use a simple snapbehavior to move the image down
   self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-  UISnapBehavior* snapBehavior = [[UISnapBehavior alloc] initWithItem:newImageView snapToPoint:self.view.center];
+  CGPoint snapPoint = self.view.center;
+  snapPoint.y += 60;
+  UISnapBehavior *snapBehavior = [[UISnapBehavior alloc] initWithItem:newImageView snapToPoint:snapPoint];
   [self.animator addBehavior:snapBehavior];
   
   [UIView animateWithDuration:0.5 animations:^{
-    newImageView.frame = CGRectMake(kGPCenteredImageX - 75, kGPCenteredImageY - 75, 150, 150);
+    newImageView.frame = CGRectMake(snapPoint.x, snapPoint.y, 200, 200);
   }];
   [self.previouslyDraggedImageView removeFromSuperview];
   self.previouslyDraggedImageView = newImageView;
