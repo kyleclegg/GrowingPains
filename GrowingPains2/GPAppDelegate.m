@@ -26,9 +26,9 @@
   UINavigationController *masterNav = (UINavigationController *)((GPSidePanelController *)self.window.rootViewController).leftPanel;
   self.journalsController = (GPJournalsViewController *)masterNav.topViewController;
   
-  // set the top level controller
+  // Set the top level controller
   GPSidePanelController *sidePanel = ((GPSidePanelController *)self.window.rootViewController);
-  UINavigationController* nav = (UINavigationController *)sidePanel.centerPanel;
+  UINavigationController *nav = (UINavigationController *)sidePanel.centerPanel;
   self.homeController = (GPHomeViewController *)nav.topViewController;
   
   // Parse setup

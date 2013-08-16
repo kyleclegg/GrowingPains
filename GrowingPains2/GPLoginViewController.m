@@ -74,9 +74,14 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
   if (textField == self.emailTextField)
+  {
     [self.passwordTextField becomeFirstResponder];
+  }
   else
+  {
+    [self.passwordTextField resignFirstResponder];
     [self performSelector:@selector(loginPressed:) withObject:nil];
+  }
   
   return YES;
 }
