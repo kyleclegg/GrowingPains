@@ -20,6 +20,8 @@
 
 @interface GPHomeViewController () // <UIGestureRecognizerDelegate>
 
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
+
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 //@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
 //@property (strong, nonatomic) UISnapBehavior *snapBehavior;
@@ -37,6 +39,10 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  // Initialize our image, twitter, and fb controllers here for faster loading later
+  self.imagePickerController = [[UIImagePickerController alloc] init];
+  
 //  self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleAttachmentRecognizer:)];
 //  self.panGestureRecognizer.delegate = self;
 //  self.panGestureRecognizer.minimumNumberOfTouches = 1;
@@ -159,6 +165,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+  // Check for + button pressed (last item), in which case we will skip all the code below and use the segue
+  if (indexPath.item == self.entries.count)
+  {
+    [self captureImage];
+    return;
+  }
+  
   UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
   UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
   UIImageView *newImageView = [[UIImageView alloc] initWithFrame:[collectionView convertRect:cell.frame toView:self.view]];
@@ -175,8 +188,6 @@
   // Animate the caption update
   GPEntry *entry = [self.entries objectAtIndex:indexPath.item];
   [self updateCaptionWithText:entry.caption];
-  
-  
   
   // Animate the image size increase
   [UIView animateWithDuration:0.5 animations:^{
@@ -328,6 +339,11 @@
 
 - (IBAction)addEntryPressed:(id)sender
 {
+  [self captureImage];
+}
+
+- (void)captureImage
+{
   if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
   {
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -348,12 +364,11 @@
   }
   else
   {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.imagePickerController.delegate = self;
+    self.imagePickerController.allowsEditing = YES;
+    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    [self presentViewController:picker animated:YES completion:nil];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
   }
 }
 
@@ -361,10 +376,10 @@
 {
   if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
   {
-    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText:[NSString stringWithFormat:@"%@ via @growingpainsapp", self.captionLabel.text]];
-    [tweetSheet addImage:self.previouslyDraggedImageView.image];
-    [self presentViewController:tweetSheet animated:YES completion:nil];
+    SLComposeViewController *tweetController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetController setInitialText:[NSString stringWithFormat:@"%@ via @growingpainsapp", self.captionLabel.text]];
+    [tweetController addImage:self.previouslyDraggedImageView.image];
+    [self presentViewController:tweetController animated:YES completion:nil];
   }
 }
 
@@ -372,10 +387,10 @@
 {
   if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
   {
-    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [controller setInitialText:self.captionLabel.text];
-    [controller addImage:self.previouslyDraggedImageView.image];
-    [self presentViewController:controller animated:YES completion:Nil];
+    SLComposeViewController *facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [facebookController setInitialText:self.captionLabel.text];
+    [facebookController addImage:self.previouslyDraggedImageView.image];
+    [self presentViewController:facebookController animated:YES completion:Nil];
   }
 }
 
