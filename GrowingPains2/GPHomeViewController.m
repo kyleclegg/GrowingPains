@@ -165,7 +165,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Check for + button pressed (last item), in which case we will skip all the code below and use the segue
+  // Check for + button pressed (last item), in which case we will skip all the code below and open the camera
   if (indexPath.item == self.entries.count)
   {
     [self captureImage];
@@ -173,9 +173,11 @@
   }
   
   UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-  UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-  UIImageView *newImageView = [[UIImageView alloc] initWithFrame:[collectionView convertRect:cell.frame toView:self.view]];
-  newImageView.image = imageView.image;
+  GPEntry *entry = [self.entries objectAtIndex:indexPath.item];
+  
+  // Copy the image from the cell, create a new imageview directly on top, and then animate it down to the center position
+  PFImageView *newImageView = [[PFImageView alloc] initWithFrame:[collectionView convertRect:cell.frame toView:self.view]];
+  newImageView.file = entry.image;
   [self.view addSubview:newImageView];
   
   // Use a simple snapbehavior to move the image down
@@ -186,7 +188,6 @@
   [self.animator addBehavior:snapBehavior];
   
   // Animate the caption update
-  GPEntry *entry = [self.entries objectAtIndex:indexPath.item];
   [self updateCaptionWithText:entry.caption];
   
   // Animate the image size increase

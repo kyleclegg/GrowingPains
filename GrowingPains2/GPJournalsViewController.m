@@ -105,14 +105,14 @@
       [[GPAppDelegate appDelegate].homeController hideSocialButtons];
       [[GPAppDelegate appDelegate].homeController.previouslyDraggedImageView removeFromSuperview];
       [GPAppDelegate appDelegate].homeController.captionLabel.alpha = 0.0f;
+      
+      // Kick off a refresh
+      if ([self.delegate respondsToSelector:@selector(refreshEntries)])
+        [self.delegate refreshEntries];
     }
     
     // Return to home view controller
     [self.sidePanelController showCenterPanelAnimated:YES];
-    
-    // Kick off a refresh
-    if ([self.delegate respondsToSelector:@selector(refreshEntries)])
-      [self.delegate refreshEntries];
   }
 }
 

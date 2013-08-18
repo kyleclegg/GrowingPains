@@ -57,7 +57,6 @@
 		08A7DC4717B97B5C00C3ED80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4617B97B5C00C3ED80 /* StoreKit.framework */; };
 		08A7DC4917B97B6200C3ED80 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DC4817B97B6200C3ED80 /* SystemConfiguration.framework */; };
 		08A7DC5217B9808A00C3ED80 /* GPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */; };
-		08D9C62E17BED98800B58A40 /* GPEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D9C62D17BED98800B58A40 /* GPEntryCell.m */; };
 		08DDFC9F17C0B3B00006F742 /* AppIconMedium.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFC9C17C0B3B00006F742 /* AppIconMedium.png */; };
 		08DDFCA017C0B3B00006F742 /* AppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFC9D17C0B3B00006F742 /* AppIconRetina.png */; };
 		08DDFCA317C0B3DA0006F742 /* AppIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFCA217C0B3DA0006F742 /* AppIconSmall.png */; };
@@ -104,7 +103,7 @@
 		0896E60017BE8B3500BFD8DD /* LogoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoutIcon.png; sourceTree = "<group>"; };
 		0896E60117BE8B3500BFD8DD /* LogoutIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoutIcon@2x.png"; sourceTree = "<group>"; };
 		0896E60D17BEC40100BFD8DD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Growing Pains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Growing Pains.app"; path = GrowingPains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,8 +132,6 @@
 		08A7DC4817B97B6200C3ED80 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		08A7DC5017B9808A00C3ED80 /* GPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPLoginViewController.h; sourceTree = "<group>"; };
 		08A7DC5117B9808A00C3ED80 /* GPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPLoginViewController.m; sourceTree = "<group>"; };
-		08D9C62C17BED98800B58A40 /* GPEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEntryCell.h; sourceTree = "<group>"; };
-		08D9C62D17BED98800B58A40 /* GPEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEntryCell.m; sourceTree = "<group>"; };
 		08DDFC9C17C0B3B00006F742 /* AppIconMedium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconMedium.png; sourceTree = "<group>"; };
 		08DDFC9D17C0B3B00006F742 /* AppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconRetina.png; sourceTree = "<group>"; };
 		08DDFCA217C0B3DA0006F742 /* AppIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconSmall.png; sourceTree = "<group>"; };
@@ -278,8 +275,6 @@
 		08A7DC3317B977F500C3ED80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08D9C62C17BED98800B58A40 /* GPEntryCell.h */,
-				08D9C62D17BED98800B58A40 /* GPEntryCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -420,7 +415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0896E56417BB49B700BFD8DD /* GPSidePanelController.m in Sources */,
-				08D9C62E17BED98800B58A40 /* GPEntryCell.m in Sources */,
 				0896E55617BAE62F00BFD8DD /* GPHelpers.m in Sources */,
 				08A7DBF917B977E500C3ED80 /* main.m in Sources */,
 				08A7DBFD17B977E500C3ED80 /* GPAppDelegate.m in Sources */,

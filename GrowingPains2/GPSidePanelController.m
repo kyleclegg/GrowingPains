@@ -19,7 +19,7 @@
 {
   [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
   [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
-  [self.view setBackgroundColor:[GPHelpers gpBrown]];
+  [self.view setBackgroundColor:[UIColor blackColor]];
   
   self.allowLeftOverpan = NO;
 }
