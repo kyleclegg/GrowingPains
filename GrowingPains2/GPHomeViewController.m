@@ -26,7 +26,6 @@
 //@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
 //@property (strong, nonatomic) UISnapBehavior *snapBehavior;
 @property (strong, nonatomic) UIImage *capturedImage;
-@property (strong, nonatomic) NSArray *entries;
 //@property (strong, nonatomic) UIImageView *draggableImageView;
 
 //@property (strong, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
@@ -57,8 +56,8 @@
   PFUser *currentUser = [PFUser currentUser];
   if (currentUser)
   {
-    [self currentJournals];
-    [self currentJournalEntries];
+    [self loadCurrentJournals];
+    [self loadCurrentJournalEntries];
   }
 }
 
@@ -82,7 +81,7 @@
 
 #pragma mark - Parse API Calls
 
-- (void)currentJournals
+- (void)loadCurrentJournals
 {
   // Find all journals given the current user
   PFQuery *query = [PFQuery queryWithClassName:@"Journal"];
@@ -96,13 +95,13 @@
       if (!self.currentJournal && objects.count > 0)
       {
         self.currentJournal = [objects objectAtIndex:0];
-        [self currentJournalEntries];
+        [self loadCurrentJournalEntries];
       }
     }
   }];
 }
 
-- (void)currentJournalEntries
+- (void)loadCurrentJournalEntries
 {
   if (self.currentJournal != nil)
   {
@@ -436,7 +435,7 @@
 - (void)refreshEntries
 {
   NSLog(@"time to refresh");
-  [self currentJournalEntries];
+  [self loadCurrentJournalEntries];
 }
 
 @end

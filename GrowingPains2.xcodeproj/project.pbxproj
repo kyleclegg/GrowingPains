@@ -60,6 +60,7 @@
 		08DDFC9F17C0B3B00006F742 /* AppIconMedium.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFC9C17C0B3B00006F742 /* AppIconMedium.png */; };
 		08DDFCA017C0B3B00006F742 /* AppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFC9D17C0B3B00006F742 /* AppIconRetina.png */; };
 		08DDFCA317C0B3DA0006F742 /* AppIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFCA217C0B3DA0006F742 /* AppIconSmall.png */; };
+		08DFADE517C1ABA1009D8549 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DFADE417C1ABA1009D8549 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +104,7 @@
 		0896E60017BE8B3500BFD8DD /* LogoutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoutIcon.png; sourceTree = "<group>"; };
 		0896E60117BE8B3500BFD8DD /* LogoutIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoutIcon@2x.png"; sourceTree = "<group>"; };
 		0896E60D17BEC40100BFD8DD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		08A7DBE917B977E500C3ED80 /* Growing Pains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Growing Pains.app"; path = GrowingPains.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A7DBE917B977E500C3ED80 /* GrowingPains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowingPains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A7DBEC17B977E500C3ED80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08A7DBEE17B977E500C3ED80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08A7DBF017B977E500C3ED80 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +136,7 @@
 		08DDFC9C17C0B3B00006F742 /* AppIconMedium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconMedium.png; sourceTree = "<group>"; };
 		08DDFC9D17C0B3B00006F742 /* AppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconRetina.png; sourceTree = "<group>"; };
 		08DDFCA217C0B3DA0006F742 /* AppIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconSmall.png; sourceTree = "<group>"; };
+		08DFADE417C1ABA1009D8549 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				08A7DC3B17B97B2800C3ED80 /* CFNetwork.framework in Frameworks */,
 				08A7DC3917B97B2000C3ED80 /* AudioToolbox.framework in Frameworks */,
 				08A7DBED17B977E500C3ED80 /* UIKit.framework in Frameworks */,
+				08DFADE517C1ABA1009D8549 /* FacebookSDK.framework in Frameworks */,
 				08A7DBEF17B977E500C3ED80 /* Foundation.framework in Frameworks */,
 				08A7DBF117B977E500C3ED80 /* CoreGraphics.framework in Frameworks */,
 				08A7DC3717B97B0600C3ED80 /* Parse.framework in Frameworks */,
@@ -202,7 +205,7 @@
 		08A7DBEA17B977E500C3ED80 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08A7DBE917B977E500C3ED80 /* Growing Pains.app */,
+				08A7DBE917B977E500C3ED80 /* GrowingPains.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 		08A7DBEB17B977E500C3ED80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08DFADE417C1ABA1009D8549 /* FacebookSDK.framework */,
 				0896E60D17BEC40100BFD8DD /* Social.framework */,
 				08A7DC4817B97B6200C3ED80 /* SystemConfiguration.framework */,
 				08A7DC4617B97B5C00C3ED80 /* StoreKit.framework */,
@@ -345,7 +349,7 @@
 			);
 			name = GrowingPains;
 			productName = GrowingPains2;
-			productReference = 08A7DBE917B977E500C3ED80 /* Growing Pains.app */;
+			productReference = 08A7DBE917B977E500C3ED80 /* GrowingPains.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -519,7 +523,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/kclegg/Documents/iOS/GrowingPains2,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";
@@ -538,7 +543,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/kclegg/Documents/iOS/GrowingPains2,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowingPains2/GrowingPains2-Prefix.pch";

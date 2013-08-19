@@ -40,7 +40,9 @@
       self.journals = objects;
       [self.tableView reloadData];
       
-    } else {
+    }
+    else
+    {
       // Log details of the failure
       NSLog(@"Error: %@ %@", error, [error userInfo]);
     }
@@ -55,6 +57,17 @@
   [self.sidePanelController showCenterPanelAnimated:YES];
   UINavigationController *navController = [[(UINavigationController *)[self.sidePanelController centerPanel] viewControllers] objectAtIndex:0];
   [navController performSegueWithIdentifier:@"Login" sender:self];
+  
+  // Clear existing data from the home controller (wait a second so the user will not see it)
+  double delayInSeconds = 1.0;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [[GPAppDelegate appDelegate].homeController hideSocialButtons];
+    [[GPAppDelegate appDelegate].homeController.previouslyDraggedImageView removeFromSuperview];
+    [GPAppDelegate appDelegate].homeController.currentJournal = nil;
+    [GPAppDelegate appDelegate].homeController.entries = nil;
+    [[GPAppDelegate appDelegate].homeController.collectionView reloadData];
+  });
 }
 
 #pragma mark - UITableView DataSource

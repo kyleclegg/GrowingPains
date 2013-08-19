@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *facebookShareView;
 
 @property (strong, nonatomic) GPJournal *currentJournal;
+@property (strong, nonatomic) NSArray *entries;
 @property (strong, nonatomic) UIImageView *previouslyDraggedImageView;
 
 - (IBAction)addEntryPressed:(id)sender;
