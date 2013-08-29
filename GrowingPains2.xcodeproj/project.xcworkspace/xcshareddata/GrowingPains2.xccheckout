@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>53FA5DE4-9665-4E29-84DA-61555AC376E9</string>
+	<string>9E01D3D3-D2E5-4168-85F2-3AD52D9E5F24</string>
 	<key>IDESourceControlProjectName</key>
 	<string>GrowingPains2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9B9616CC-C544-4AE9-A7A7-9F6BE0E20F40</key>
-		<string>https://github.com/kmc239/GrowingPains.git</string>
+		<key>7B1E5087-A01D-41AC-A435-60C5532A3984</key>
+		<string>ssh://github.com/kmc239/GrowingPains.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GrowingPains2.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9B9616CC-C544-4AE9-A7A7-9F6BE0E20F40</key>
+		<key>7B1E5087-A01D-41AC-A435-60C5532A3984</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kmc239/GrowingPains.git</string>
+	<string>ssh://github.com/kmc239/GrowingPains.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9B9616CC-C544-4AE9-A7A7-9F6BE0E20F40</string>
+	<string>7B1E5087-A01D-41AC-A435-60C5532A3984</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9B9616CC-C544-4AE9-A7A7-9F6BE0E20F40</string>
+			<string>7B1E5087-A01D-41AC-A435-60C5532A3984</string>
 			<key>IDESourceControlWCCName</key>
-			<string>GrowingPains</string>
+			<string>GrowingPains2</string>
 		</dict>
 	</array>
 </dict>

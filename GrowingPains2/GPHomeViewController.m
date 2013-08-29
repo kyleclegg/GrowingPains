@@ -193,6 +193,9 @@
   [UIView animateWithDuration:0.5 animations:^{
     newImageView.frame = CGRectMake(snapPoint.x, snapPoint.y, 240, 240);
   } completion:^(BOOL finished) {
+    
+//    CGRect twitterFrame = 
+    
     [self showSocialButtons];
   }];
   
